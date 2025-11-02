@@ -31,13 +31,13 @@ jobs:
       # ২. প্লেলিস্ট ফাইলগুলো একত্রিত করা
       - name: Combine M3U files
         run: |
-          # master.m3u ফাইলটি তৈরি শুরু করুন এবং একটি হেডার দিন
-          echo '#EXTM3U x-tvg-url="YOUR_EPG_URL_HERE.xml"' > master.m3u
+          # index.m3u ফাইলটি তৈরি শুরু করুন এবং একটি হেডার দিন
+          echo '#EXTM3U x-tvg-url="YOUR_EPG_URL_HERE.xml"' > index.m3u
           
-          # প্রতিটি ফাইল থেকে #EXTM3U হেডারটি বাদ দিয়ে বাকি অংশ master.m3u তে যোগ করুন
-          grep -v "#EXTM3U" channels.m3u >> master.m3u
-          grep -v "#EXTM3U" movies.m3u >> master.m3u
-          grep -v "#EXTM3U" series.m3u >> master.m3u
+          # প্রতিটি ফাইল থেকে #EXTM3U হেডারটি বাদ দিয়ে বাকি অংশ index.m3u তে যোগ করুন
+          grep -v "#EXTM3U" channels.m3u >> index.m3u
+          grep -v "#EXTM3U" movies.m3u >> index.m3u
+          grep -v "#EXTM3U" series.m3u >> index.m3u
           # আপনার যতগুলো ফাইল আছে, সবগুলো এখানে যোগ করুন
           
           echo "✅ Playlists combined successfully."
@@ -47,6 +47,6 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-update master.m3u playlist"
-          file_pattern: master.m3u # শুধুমাত্র master.m3u ফাইলটি কমিট করো
+          commit_message: "Auto-update index.m3u playlist"
+          file_pattern: index.m3u # শুধুমাত্র index.m3u ফাইলটি কমিট করো
           commit_options: '--no-verify'

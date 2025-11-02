@@ -4,13 +4,17 @@ on:
   # এই workflow কখন রান করবে?
   push:
     branches:
-      - main  # শুধুমাত্র main ব্রাঞ্চে পুশ করলে
+      - main  # আপনার প্রধান ব্রাঞ্চের নাম যদি 'master' হয়, তবে এটি পরিবর্তন করুন
     paths:
       # শুধুমাত্র এই ফাইলগুলো পরিবর্তন হলেই রান করবে
       - 'series.m3u'
       - 'movies.m3u'
       - 'channels.m3u'
       # এখানে আপনার অন্য সব M3U ফাইলের নাম যোগ করুন
+
+# **এটিই মূল সমাধান: GitHub Actions-কে আপনার রেপোজিটরিতে লেখার (Write) অনুমতি দেবে**
+permissions:
+  contents: write 
 
 jobs:
   build:
@@ -20,12 +24,14 @@ jobs:
       # ১. কোডগুলো সার্ভারে ডাউনলোড করা
       - name: Checkout repository
         uses: actions/checkout@v4
+        # GITHUB_TOKEN ব্যবহার করে Write পারমিশন নিশ্চিত করা
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # ২. প্লেলিস্ট ফাইলগুলো একত্রিত করা
       - name: Combine M3U files
         run: |
           # master.m3u ফাইলটি তৈরি শুরু করুন এবং একটি হেডার দিন
-          # EPG (Electronic Program Guide) এর জন্য x-tvg-url যোগ করতে পারেন
           echo '#EXTM3U x-tvg-url="YOUR_EPG_URL_HERE.xml"' > master.m3u
           
           # প্রতিটি ফাইল থেকে #EXTM3U হেডারটি বাদ দিয়ে বাকি অংশ master.m3u তে যোগ করুন
@@ -36,7 +42,8 @@ jobs:
           
           echo "✅ Playlists combined successfully."
 
-      # ৩. পরিবর্তনগুলো স্বয়ংক্রিয়ভাবে কমিট করা
+      # ৩. পরিবর্তনগুলো স্বয়ংক্রিয়ভাবে কমিট করা ও পুশ করা
+      # যেহেতু 'contents: write' পারমিশন যোগ করা হয়েছে, এটি আর ফেইল করবে না।
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

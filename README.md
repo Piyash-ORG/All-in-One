@@ -12,14 +12,16 @@ All links are updated regularly for smooth and reliable playback on any IPTV pla
 ## 🌐 Playlist URL  
 Copy and paste the link below into your favorite IPTV player 👇
 
-https://piyashltd.github.io/all-in-one/index.m3u
+https://piyashltd.github.io/all-in-one/index.m3u or https://tinyurl.com/bd-streams
+
 
 ---
 
 ## 🧭 How to Use
 
 1. Install any IPTV Player such as:  
-   - **TiviMate** (Android TV)  
+   - **TiviMate**  (Android TV)
+   - **IPTV** (Android TV)
    - **IPTV Smarters Pro**  
    - **XCIPTV Player**  
    - **OTT Navigator**  
@@ -51,7 +53,7 @@ If any channel owner wants removal, please open an issue on GitHub.
 ---
 
 <p align="center">
-🧡 <i>Created by</i> <a href="https://github.com/Piyash-ORG" target="_blank"><b>Piyash-ORG</b></a><br>
+🧡 <i>Created by</i> <a href="https://t.me/mhd_piyash" target="_blank"><b>Piyash Ltd</b></a><br>
 🌐 <a href="https://piyashltd.github.io/all-in-one/" target="_blank">Visit Playlist Page</a>
 </p>
 

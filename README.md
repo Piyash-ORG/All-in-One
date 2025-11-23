@@ -1,59 +1,30 @@
-
-
-<h1 align="center">📺 All-in-One IPTV Playlist</h1>
-
+UltraPlay - IPTV & Movie Player 📺
+A modern, fast, and lightweight web player designed for seamless streaming. Watch Live TV, Movies, and Web Series directly from your browser with a premium, Netflix-style dark interface.
 <p align="center">
-A curated collection of <b>Bangla</b>, <b>Sports</b>, <b>News</b>, <b>Entertainment</b>, and <b>International</b> live TV channels in M3U format.  
-All links are updated regularly for smooth and reliable playback on any IPTV player.
+<a href="https://cinemfl.vercel.app">
+<img src="https://img.shields.io/badge/View_Live_Demo-➡️-e50914.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+</a>
 </p>
-
----
-
-## 🌐 Playlist URL  
-Copy and paste the link below into your favorite IPTV player 👇
-
-https://piyashltd.github.io/all-in-one/index.m3u or https://tinyurl.com/bd-streams
-
-
----
-
-## 🧭 How to Use
-
-1. Install any IPTV Player such as:  
-   - **TiviMate**  (Android TV)
-   - **IPTV Apk** (Android TV)
-   - **IPTV Smarters Pro**  
-   - **XCIPTV Player**  
-   - **OTT Navigator**  
-2. Open the app and choose **Add Playlist via URL**  
-3. Paste the link:  
-   👉 `https://piyashltd.github.io/all-in-one/index.m3u`  
-4. Enjoy live Bangla & International channels 🎉  
-
----
-
-## 🗂 Categories
-
-| Type | Description |
-|------|--------------|
-| 🇧🇩 **Bangla** | Local Bangla TV & Entertainment Channels |
-| ⚽ **Sports** | Global Sports Channels (Cricket, Football & More) |
-| 📰 **News** | Bangla & International News Channels |
-| 🎬 **Entertainment** | Drama, Movies, and Reality Shows |
-| 🌏 **International** | Popular Global TV Channels |
-
----
-
-## ⚠️ Disclaimer
-
-This project is created **for educational and testing purposes only.**  
-All rights, logos, and streams belong to their respective content owners.  
-If any channel owner wants removal, please open an issue on GitHub.
-
----
-
+✨ Key Features
+ * ⚙️ Advanced Quality Selector: Automatically detects HLS stream qualities. Users can switch between Auto, 1080p, 720p, etc., using a custom-built, responsive quality menu.
+ * 🤖 Smart Recommendations: While watching a channel, the player automatically generates a "You might also like" section, suggesting similar content from the same category.
+ * 📂 Dynamic Category Filtering: Automatically parses M3U groups and creates a horizontal, scrollable filter bar to easily navigate between genres (Sports, News, Movies, etc.).
+ * 🔓 CORS Proxy Toggle: Built-in settings menu allowing users to enable/disable a CORS proxy, ensuring streams play even if they have cross-origin restrictions.
+ * 📱 Fully Responsive UI: Built with Tailwind CSS, featuring a theater-mode video player, grid layouts, and mobile-friendly touch controls.
+ * 🚀 Optimized Performance: Uses lazy loading for channel logos to ensure the interface remains fast and smooth, even with large playlists.
+🚀 Getting Started
+ * Launch the Player: Click the "View Live Demo" button above.
+ * Select Content: Browse the "Library" or use the top category buttons to filter channels.
+ * Player Controls: Click on any card to start playing.
+   * Use the Gear Icon (⚙️) in the player bar to change video quality.
+   * Scroll down to see related channel suggestions.
+ * Settings: If a stream doesn't load, click the Settings (⚙️) icon in the top header and enable "CORS Proxy", then reload.
+🛠️ Built With
+ * HTML5 & Vanilla JavaScript (ES6+)
+ * Tailwind CSS - For rapid, responsive styling.
+ * Video.js - Enterprise-grade video player framework.
+ * VideoJS Contrib Quality Levels - Plugin for HLS quality extraction.
+ * FontAwesome - For scalable UI icons.
 <p align="center">
-🧡 <i>Created by</i> <a href="https://t.me/mhd_piyash" target="_blank"><b>Piyash Ltd</b></a><br>
-🌐 <a href="https://piyashltd.github.io/all-in-one/" target="_blank">Visit Playlist Page</a>
+Made with ❤️ for streaming enthusiasts.
 </p>
-

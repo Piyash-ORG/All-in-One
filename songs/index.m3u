@@ -93,73 +93,85 @@ https://stream.mux.com/j3aY4WhYfGqBJ00mbUp6xbHs7R3Kx51Cz5lUR8h2nAcU.m3u8
 https://stream.mux.com/COR77KOvspjd6W6dAxrO02x2TAVR00BrVtMxxIye2E36E.m3u8
 #EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/V32Xi0hq2P8/maxresdefault.jpg" group-title="Bengali Songs",47. (Mon Mane Na) - Title Song - Dev - Koel Mallick - Zubeen Garg - June Banerjee - Jeet Gannguli
 https://stream.mux.com/DkaW01OH8S55doZuFxygB3VeZwC7O00qsYnlAz900FrGxM.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/E45J_yOyUcA/maxresdefault.webp" group-title="Bollywood Songs",48. Phir Se - (Dhurandhar The Revenge) - Arijit Singh - Shashwat Sachdev
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/rY_0SOlmrdY/maxresdefault.jpg",48. Ankhiyon Se Goli Maare - (Dulhe Raja) - Sonu Nigam & Jaspinder Narula - Tips Official
+https://stream.mux.com/6pUWF01R2ZeYzgOZNCIT3300EOXxvvfsdI6hGFDW4omGw.m3u8
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/4mGzU0VbdSU/maxresdefault.jpg",49. Tu Mera Hero Number 1 - (Hero No 1) - Udit Narayan & Alka Yagnik - Tips Official
+https://stream.mux.com/4yHIIFyYTYRpbRusR8ntMQvt19GDxAmpL02013MBGn00fA.m3u8
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/aPkJWkETcoo/maxresdefault.jpg",50. Suno Miya Suno - (Kyo Kii... Main Jhuth Nahin Bolta) - Anand Raj Anand - T-Series
+https://stream.mux.com/wTDAbzvRUMLq2vvQKfsQIl193Mng2HjWdSWT48Fa02cI.m3u8
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/kMlMVd7h74M/maxresdefault.jpg",51. Gore Tan Se Sarakta Jaye - (Aamdani Atthani Kharcha Rupaiya) - Sonu Nigam & Alka Yagnik - Tips Official
+https://stream.mux.com/Z49DaT5baxnEFr68FChBhUO02dHiO86lDPP5uR02UjF00M.m3u8
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/rap8SoUIPaw/maxresdefault.jpg",52. Dance Pe Chance - (Rab Ne Bana Di Jodi) - Sunidhi Chauhan & Labh Janjua - YRF
+https://stream.mux.com/LOyTP01W9FQms97hFW17r00C45yKUIbQPJK024AoZ9oJ8o.m3u8
+#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/EkxOXF9J77w/maxresdefault.jpg",53. Saree Ke Fall Sa - (R... Rajkumar) - Antara Mitra & Nakash Aziz - Eros Now
+https://stream.mux.com/jdZwbU2QKN01EUm02GOLcNZWqYzn8ffCtCQU01qRJwZDWI.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/E45J_yOyUcA/maxresdefault.webp" group-title="Bollywood Songs",54. Phir Se - (Dhurandhar The Revenge) - Arijit Singh - Shashwat Sachdev
 https://stream.mux.com/A4bo1lywF2JXMmhqH02K5pR5D026CQUQVGspeYwN7ZkKI.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/F2m4HPLvj-4/maxresdefault.webp" group-title="Bollywood Songs",49. Jaiye Sajana - (Dhurandhar The Revenge) - Satinder Sartaaj & Jasmine Sandlas - Shashwat Sachdev
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/F2m4HPLvj-4/maxresdefault.webp" group-title="Bollywood Songs",55. Jaiye Sajana - (Dhurandhar The Revenge) - Satinder Sartaaj & Jasmine Sandlas - Shashwat Sachdev
 https://stream.mux.com/gEO67r0263JZSnF6lxuw02QemPUjWO005RYY2QuIgbyCyg.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/U2QNhsAgIIE/maxresdefault.webp" group-title="Bollywood Songs",50. Dil Ibaadat - (Tum Mile) - KK - Pritam
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/U2QNhsAgIIE/maxresdefault.webp" group-title="Bollywood Songs",56. Dil Ibaadat - (Tum Mile) - KK - Pritam
 https://stream.mux.com/YYOYsqb19mKSV199JhZ1l00jzaJkhWed4y5gqUxzblQY.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Gf0oGsA7DSE/maxresdefault.webp" group-title="Bollywood Songs",51. Chura Liya - (Music Album) - Sachet & Parampara - Sachet-Parampara
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Gf0oGsA7DSE/maxresdefault.webp" group-title="Bollywood Songs",57. Chura Liya - (Music Album) - Sachet & Parampara - Sachet-Parampara
 https://stream.mux.com/CWE1SePo4UjL2tX9QQ7Z01T2otjSLPe5SDsjhhhrZqLo.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/UbMgcdmYC70/maxresdefault.webp" group-title="Bollywood Songs",52. Chandni - (Music Album) - Sachet Tandon & Parampara Tandon - B Praak
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/UbMgcdmYC70/maxresdefault.webp" group-title="Bollywood Songs",58. Chandni - (Music Album) - Sachet Tandon & Parampara Tandon - B Praak
 https://stream.mux.com/blZ02tG9XXo01r1MBtqjWZN01vPLHGOtniP4s9kNHMQCvk.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/UbMgcdmYC70/maxresdefault.webp" group-title="Bollywood Songs",53. Malang Sajna - (Music Album) - Sachet Tandon & Parampara Tandon - Sachet-Parampara
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/UbMgcdmYC70/maxresdefault.webp" group-title="Bollywood Songs",59. Malang Sajna - (Music Album) - Sachet Tandon & Parampara Tandon - Sachet-Parampara
 https://stream.mux.com/CTrwA38ciCvID7uBLMftMwjsk6CayXhq7NWzBtBcYC00.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Q3R-zuX3CJ4/maxresdefault.webp" group-title="Bollywood Songs",54. Tu Meri Zindagi / Adayein - (T-Series Mixtape Rewind S3) - Parampara & Sachet - Abhijit Vaghani
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Q3R-zuX3CJ4/maxresdefault.webp" group-title="Bollywood Songs",60. Tu Meri Zindagi / Adayein - (T-Series Mixtape Rewind S3) - Parampara & Sachet - Abhijit Vaghani
 https://stream.mux.com/00VmnOEdkARkB601vR825L2SC44Mm57klm5WtliugCtNQ.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/SVjkxdjivts/maxresdefault.webp" group-title="Bollywood Songs",55. Meri Aashiqui - (Music Album) - Jubin Nautiyal - Rochak Kohli
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/SVjkxdjivts/maxresdefault.webp" group-title="Bollywood Songs",61. Meri Aashiqui - (Music Album) - Jubin Nautiyal - Rochak Kohli
 https://stream.mux.com/PsQtk022IFEdnqz01zEhGgOgMGAD7mVDgvEx2lbfsYJDk.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Tc8kb5HBNrA/maxresdefault.webp" group-title="Bollywood Songs",56. Mast Nazron Se - (Music Album) - Jubin Nautiyal - Rochak Kohli
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Tc8kb5HBNrA/maxresdefault.webp" group-title="Bollywood Songs",62. Mast Nazron Se - (Music Album) - Jubin Nautiyal - Rochak Kohli
 https://stream.mux.com/tfPq82dXSH01mJKfxNFpKEYOwUpfgS59cFJ8lPTbg00Ss.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/yxXxt7P4jes/maxresdefault.webp" group-title="Bollywood Songs",57. Main Jis Din Bhulaa Du - (Music Album) - Jubin Nautiyal & Tulsi Kumar - Rochak Kohli
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/yxXxt7P4jes/maxresdefault.webp" group-title="Bollywood Songs",63. Main Jis Din Bhulaa Du - (Music Album) - Jubin Nautiyal & Tulsi Kumar - Rochak Kohli
 https://stream.mux.com/l3pdgDBV2IO601WPsrJay9NuEElOTYEF00WZNJTtdIYd00.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Z7XiKx_rj2I/maxresdefault.webp" group-title="Bollywood Songs",58. Wafa Na Raas Aayee - (Music Album) - Jubin Nautiyal - Meet Bros
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/Z7XiKx_rj2I/maxresdefault.webp" group-title="Bollywood Songs",64. Wafa Na Raas Aayee - (Music Album) - Jubin Nautiyal - Meet Bros
 https://stream.mux.com/4La02gyikxyl1fpdABkFhrTMiIsY7dnZpAyjVdNtiwlg.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/YIucrdfR6rI/maxresdefault.webp" group-title="Bollywood Songs",59. Barsaat Ki Dhun - (Music Album) - Jubin Nautiyal - Rochak Kohli
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/YIucrdfR6rI/maxresdefault.webp" group-title="Bollywood Songs",65. Barsaat Ki Dhun - (Music Album) - Jubin Nautiyal - Rochak Kohli
 https://stream.mux.com/5gyqG47VDkMcKRAjawR73B1D4OO01Juezk5B7NkRS6mQ.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/AV8xUbIFhdc/maxresdefault.webp" group-title="Bollywood Songs",60. Chitthi - (Music Album) - Jubin Nautiyal - Payal Dev
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/AV8xUbIFhdc/maxresdefault.webp" group-title="Bollywood Songs",66. Chitthi - (Music Album) - Jubin Nautiyal - Payal Dev
 https://stream.mux.com/Rk02ROfnOi1bZjvCFqBG00OqlzQF02BvBtlg1e87btsfA4.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/tLqtnGLfm4Q/maxresdefault.jpg" group-title="Bollywood Songs",61. Tum Hi Aana - (Marjaavaan) - Jubin Nautiyal - Payal Dev
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/tLqtnGLfm4Q/maxresdefault.jpg" group-title="Bollywood Songs",67. Tum Hi Aana - (Marjaavaan) - Jubin Nautiyal - Payal Dev
 https://stream.mux.com/o7JA8q4hybvKmX2PnwBIotXFsi1ync6eZIxZqx5TQhk.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/mlLxDaBSU8k/maxresdefault.jpg" group-title="Bollywood Songs",62. Dil Tu Hi Bataa - (Krrish 3) - Zubeen Garg & Alisha Chinai - Rajesh Roshan
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/mlLxDaBSU8k/maxresdefault.jpg" group-title="Bollywood Songs",68. Dil Tu Hi Bataa - (Krrish 3) - Zubeen Garg & Alisha Chinai - Rajesh Roshan
 https://stream.mux.com/6PcFqVJVrd92mZlDkT02kdKUoP02fdxdHf202PNSSRIQiM.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/c-thETScd1g/maxresdefault.jpg" group-title="Bollywood Songs",63. Main Rang Sharbaton Ka - (Phata Poster Nikhla Hero) - Arijit Singh & Chinmayi Sripaada - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/c-thETScd1g/maxresdefault.jpg" group-title="Bollywood Songs",69. Main Rang Sharbaton Ka - (Phata Poster Nikhla Hero) - Arijit Singh & Chinmayi Sripaada - Pritam
 https://stream.mux.com/3KH2viAMBvFAxpLmxA7OMH649rknGR02Su3yrHy022W4I.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/QcQpqWhTBCE/maxresdefault.jpg" group-title="Bollywood Songs",64. Chikni Chameli - (Agneepath) - Shreya Ghoshal - Ajay-Atul
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/QcQpqWhTBCE/maxresdefault.jpg" group-title="Bollywood Songs",70. Chikni Chameli - (Agneepath) - Shreya Ghoshal - Ajay-Atul
 https://stream.mux.com/O02hUfneltuh02T3ZLvNHlFXuytzrkwSFeMF02Px5ehO7M.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/w8LcxY43N5Y/maxresdefault.jpg" group-title="Bollywood Songs",65. Pal - (Jalebi) - Arijit Singh & Shreya Ghoshal - Javed-Mohsin
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/w8LcxY43N5Y/maxresdefault.jpg" group-title="Bollywood Songs",71. Pal - (Jalebi) - Arijit Singh & Shreya Ghoshal - Javed-Mohsin
 https://stream.mux.com/SlBaunTBy9spWZHoDusSB00fH2vYUoaS91EaHRA01OpI00.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/2uUmHTgT65I/maxresdefault.jpg" group-title="Bollywood Songs",66. Dhoom Machale - (Dhoom) - Sunidhi Chauhan - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/2uUmHTgT65I/maxresdefault.jpg" group-title="Bollywood Songs",72. Dhoom Machale - (Dhoom) - Sunidhi Chauhan - Pritam
 https://stream.mux.com/HN7b02odvyXfmETpvyZCPYh8e00KAk32ZCJs00g8t8O4Ns.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/nDjloeIB3Pc/maxresdefault.jpg" group-title="Bollywood Songs",67.  Sitaare - (Ikkis) - Arijit Singh & Amitabh B
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/nDjloeIB3Pc/maxresdefault.jpg" group-title="Bollywood Songs",73.  Sitaare - (Ikkis) - Arijit Singh & Amitabh B
 https://stream.mux.com/01sFMBXLyhBDdZtv8IdKaSItAImVU3BayefC600g93njg.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/J_d_Q3pTYcc/maxresdefault.jpg" group-title="Bollywood Songs",68.  Chunnari Chunnari Let’s Go - (Hai Jawani Toh Ishq Hona Hai) - Akshay & IP
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/J_d_Q3pTYcc/maxresdefault.jpg" group-title="Bollywood Songs",74.  Chunnari Chunnari Let’s Go - (Hai Jawani Toh Ishq Hona Hai) - Akshay & IP
 https://stream.mux.com/h7MccdjyN74fUZOOs6OYHYqTSXeMzUJ2XjySpcHZicM.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/e1edxTqJnKk/maxresdefault.jpg" group-title="Bollywood Songs",69.  Maahi - (Raaz 2) - Toshi & Sharib Sabri - Mohit Suri
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/e1edxTqJnKk/maxresdefault.jpg" group-title="Bollywood Songs",75.  Maahi - (Raaz 2) - Toshi & Sharib Sabri - Mohit Suri
 https://stream.mux.com/ZC1Khe9aDtjOeaZVVignF00o9OwSdrgK5nmrDn00wWSzI.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/PkhfKq9m0Uo/maxresdefault.jpg" group-title="Bollywood Songs",70.  Tujhe Sochta Hoon - (Jannat 2) - KK - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/PkhfKq9m0Uo/maxresdefault.jpg" group-title="Bollywood Songs",76.  Tujhe Sochta Hoon - (Jannat 2) - KK - Pritam
 https://stream.mux.com/rmuM02zUM8W01FLIStVFz0200bC9CtwPsGX2c02adpNbaWL4.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/jiBG2UT1XS0/maxresdefault.jpg" group-title="Bollywood Songs",71.  Kabhii Tumhhe Female Version - (Shershaah) - Palak Muchhal - Javed Mohsin
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/jiBG2UT1XS0/maxresdefault.jpg" group-title="Bollywood Songs",77.  Kabhii Tumhhe Female Version - (Shershaah) - Palak Muchhal - Javed Mohsin
 https://stream.mux.com/Nnb5gzI01SXOm5qx4LbfY5gCnAD2DeAu1usT1FBEZk8k.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/lzEop75AeOk/maxresdefault.jpg" group-title="Bollywood Songs",72.  Naiyo Lagda - (Kisi Ka Bhai Kisi Ki Jaan) - Kamaal K & Palak M - Himesh R
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/lzEop75AeOk/maxresdefault.jpg" group-title="Bollywood Songs",78.  Naiyo Lagda - (Kisi Ka Bhai Kisi Ki Jaan) - Kamaal K & Palak M - Himesh R
 https://stream.mux.com/Q2L9l029z02k0200Yo5HRwnY3S58sRL01anlwlubNmdWSLqU.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/p_iG4mrFV8s/maxresdefault.jpg" group-title="Bollywood Songs",73.  Ek Pyaar Ka Nagma - (Zee Cine Awards) - Palak Muchhal - Mithoon
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/p_iG4mrFV8s/maxresdefault.jpg" group-title="Bollywood Songs",79.  Ek Pyaar Ka Nagma - (Zee Cine Awards) - Palak Muchhal - Mithoon
 https://stream.mux.com/5ZeMmWPshUe4oxdnrnQoNK9J01xcMHCHNZQNBidIzzTY.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/aKdqQ5BC_S4/maxresdefault.jpg" group-title="Bollywood Songs",74. Main Rang Sharbaton Ka - (Phata Poster Nikhla Hero) - Atif Aslam & Chinmayi - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/aKdqQ5BC_S4/maxresdefault.jpg" group-title="Bollywood Songs",80. Main Rang Sharbaton Ka - (Phata Poster Nikhla Hero) - Atif Aslam & Chinmayi - Pritam
 https://stream.mux.com/kjkFIm6A02RN4QRwJmDD41851O8yhTL4WC5FceT6g0102k.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/hoNb6HuNmU0/maxresdefault.jpg" group-title="Bollywood Songs",75. Khairiyat - (Chhichhore) - Arijit Singh - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/hoNb6HuNmU0/maxresdefault.jpg" group-title="Bollywood Songs",81. Khairiyat - (Chhichhore) - Arijit Singh - Pritam
 https://stream.mux.com/uVPHi9xGYD011kfqJwOfr5GJ02McBb8lwW00sqK02BJ5Vv4.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/Ov0YGGSY6gY/maxresdefault.jpg" group-title="Bollywood Songs",76. Kaun Tujhe - (M.S. Dhoni - The Untold Story) - Palak Muchhal - Amaal Mallik
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/Ov0YGGSY6gY/maxresdefault.jpg" group-title="Bollywood Songs",82. Kaun Tujhe - (M.S. Dhoni - The Untold Story) - Palak Muchhal - Amaal Mallik
 https://stream.mux.com/eu8SIQQ8gHV6DGvvfY6BN4La00FjIV02cbWh02iPoCmd2c.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/MP4F0ZcW_G0/maxresdefault.jpg" group-title="Bollywood Songs",77. Aaja Nachle - (Aaja Nachle) - Sunidhi Chauhan - Salim-Sulaiman
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/MP4F0ZcW_G0/maxresdefault.jpg" group-title="Bollywood Songs",83. Aaja Nachle - (Aaja Nachle) - Sunidhi Chauhan - Salim-Sulaiman
 https://stream.mux.com/9JpGH6z6Uee1WeLQP7tYChhpor43KkMwIKjioZtlwC8.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/Qo4IOTAbGAM/maxresdefault.jpg" group-title="Bollywood Songs",78. Deewaniyat - (Ek Deewane Ki Deewaniyat) - Vishal - Kaushik-Guddu
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/Qo4IOTAbGAM/maxresdefault.jpg" group-title="Bollywood Songs",84. Deewaniyat - (Ek Deewane Ki Deewaniyat) - Vishal - Kaushik-Guddu
 https://stream.mux.com/yT8Hb2NMo5eKLFd02SfTdkAvaRyk1ApAQZPVK29mmebY.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/r_lxE7kF0Fo/maxresdefault.jpg" group-title="Bollywood Songs",79. Bol Kaffara Kya Hoga - (Ek Deewane Ki Deewaniyat) - Neha Kakkar & Farhan Sabri - DJ Chetas & Lijo George
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/r_lxE7kF0Fo/maxresdefault.jpg" group-title="Bollywood Songs",85. Bol Kaffara Kya Hoga - (Ek Deewane Ki Deewaniyat) - Neha Kakkar & Farhan Sabri - DJ Chetas & Lijo George
 https://stream.mux.com/NLY2PdZOXYI8ZCbFjYL00LPI2Ldfr3gfzzPVWQ3JogPM.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/OX-h7MtkeOI/maxresdefault.jpg" group-title="Bollywood Songs",80. O Saathi - (Baaghi 2) - Atif Aslam - Arko
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/OX-h7MtkeOI/maxresdefault.jpg" group-title="Bollywood Songs",86. O Saathi - (Baaghi 2) - Atif Aslam - Arko
 https://stream.mux.com/toOgqoAnVbDIeYRSRtR01kz3Bkzhz00bhTqxf3kPxAGW00.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/vQchZx9MvJ8/maxresdefault.jpg" group-title="Bollywood Songs",81. Ek Din Teri Raahon Mein - (Naqaab) - Javed Ali - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/vQchZx9MvJ8/maxresdefault.jpg" group-title="Bollywood Songs",87. Ek Din Teri Raahon Mein - (Naqaab) - Javed Ali - Pritam
 https://stream.mux.com/6hKdaEJVRu501BoxMAtlMAvV01i9hBiqLpGhS8ElmIlCo.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/vnlk8V-q0oU/maxresdefault.jpg" group-title="Bollywood Songs",82. Jhalak Dikhla Ja - (Aksar) - Himesh Reshammiya - Himesh Reshammiya
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/vnlk8V-q0oU/maxresdefault.jpg" group-title="Bollywood Songs",88. Jhalak Dikhla Ja - (Aksar) - Himesh Reshammiya - Himesh Reshammiya
 https://stream.mux.com/ui01ii6jYQSsdJ9wPyjPmZ2Qo2uUkIVGrRY01FaDgq9UU.m3u8

@@ -111,7 +111,7 @@ https://live-hls-apps-ajm24-fa.getaj.net/AJM24/index.m3u8
 https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/ZRtMs0DD/star-news.jpg" group-title="News" tvg-block="1",STAR News
 https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/dswQwgtc/al-quran-tv.jpg" group-title="Religious" tvg-block="1",Al Quran Al Kareem TV
+#EXTINF:-1 tvg-logo="https://i.ibb.co.com/dswQwgtc/al-quran-tv.jpg" group-title="Religious" tvg-block="1",Somoy TV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1713/output/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/3yChp9hb/news-24.jpg" group-title="News" tvg-block="1",News 24 HD
 https://owrcovcrpy.gpcdn.net/bpk-tv/1708/output/index.m3u8

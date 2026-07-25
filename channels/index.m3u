@@ -1,8 +1,4 @@
 #EXTM3U
-#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/m5y4dc2P/In-Shot-20260703-142842455.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Toffee
-#DEAD:https://cdn-direct.vercel.app/toffee1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/m5y4dc2P/In-Shot-20260703-142842455.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Toffee
-https://cdn-direct.vercel.app/toffee2.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Fancode
 https://cdn-direct.vercel.app/fancode1.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Fancode

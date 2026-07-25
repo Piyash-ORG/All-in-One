@@ -1,6 +1,6 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/m5y4dc2P/In-Shot-20260703-142842455.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - Toffee
-https://cdn-direct.vercel.app/toffee1.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/m5y4dc2P/In-Shot-20260703-142842455.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Toffee
+#DEAD:https://cdn-direct.vercel.app/toffee1.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/m5y4dc2P/In-Shot-20260703-142842455.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Toffee
 https://cdn-direct.vercel.app/toffee2.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Fancode
@@ -11,10 +11,10 @@ https://cdn-direct.vercel.app/fancode2.m3u8
 https://cdn-direct.vercel.app/tapmad1.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/6cxM0bLs/In-Shot-20260717-194848655.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Tapmad
 https://cdn-direct.vercel.app/tapmad2.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/JF8HH0RQ/images-17.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - Fox Sports
-https://fiveo4.casadenoval.uk/main/secure/22286877859d47a5f4dc89614376b0a276a85780774c726cedb5f2449a228ad1/1784413606/fox-usa.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/jZBSzr66/images-18.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BBC Sports
-https://fiveo4.casadenoval.uk/main/secure/4954ca91b2d752169ff222fea47bed8d0787b0aa5519ecc485d4434c57d39959/1784413718/bbcone-uk.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/JF8HH0RQ/images-17.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Fox Sports
+#DEAD:https://fiveo4.casadenoval.uk/main/secure/22286877859d47a5f4dc89614376b0a276a85780774c726cedb5f2449a228ad1/1784413606/fox-usa.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/jZBSzr66/images-18.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - BBC Sports
+#DEAD:https://fiveo4.casadenoval.uk/main/secure/4954ca91b2d752169ff222fea47bed8d0787b0aa5519ecc485d4434c57d39959/1784413718/bbcone-uk.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/KpXv6gg0/In-Shot-20260711-143153115.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - T Sports
 http://103.165.93.31:8095/tsports/tracks-v1a1a2/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/zWXYbd13/In-Shot-20260703-150236661.jpg" group-title="🔥 FIFA World Cup 2026",Somoy TV
@@ -23,14 +23,14 @@ https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
 https://s1.itcnbd.live/unite-8-sports-2-hd/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Wp222D1d/In-Shot-20260714-224243602.jpg" group-title="Sports",FIFA - Bangladesh Television
 https://s1.itcnbd.live/btv/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/CKdrdQRQ/In-Shot-20260703-150258529.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - D Sports
-https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BEIN Sports 1
-https://andro.evrenesoglu57.click/checklist/androstreamliveexn4.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BEIN Sports 1
-https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BEIN Sports 1
-https://andro.evrenesoglu57.click/checklist/androstreamliveexn3.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/CKdrdQRQ/In-Shot-20260703-150258529.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - D Sports
+#DEAD:https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026",FIFA - BEIN Sports 1
+#DEAD:https://andro.evrenesoglu57.click/checklist/androstreamliveexn4.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026",FIFA - BEIN Sports 1
+#DEAD:https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026",FIFA - BEIN Sports 1
+#DEAD:https://andro.evrenesoglu57.click/checklist/androstreamliveexn3.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/FkvqwYS9/images-2.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Telemendu
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BEIN Sports 1

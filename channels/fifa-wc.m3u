@@ -33,11 +33,11 @@ https://s1.itcnbd.live/btv/tracks-v1a1/mono.m3u8
 #DEAD:https://andro.evrenesoglu57.click/checklist/androstreamliveexn3.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/FkvqwYS9/images-2.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Telemendu
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - BEIN Sports 1
-https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/KxnDv9DV/960px-Bein-sport-logo-svg.png" group-title="🔥 FIFA World Cup 2026",FIFA - BEIN Sports 1
+#DEAD:https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
 #EXTINF:-1 tvg-logo="https://assets.goal.com/images/v3/blta396e76391fffdfa/TyC_Sports_logo.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - TyC Sports
 https://amg26268-amg26268c14-freelivesports-emea-10267.playouts.now.amagi.tv/ts-us-e2-n2/playlist/amg26268-sportsstudio-tycsports-freelivesportsemea/cb543d1e786c648a93d43e66d4ef41a5f9bf53fc087a8d6933fb4b926bc10f41f9e5af86a540ff1902cb5d81385e7d505b6cdb64dc7d01c6a57cc84146394e28ce87c01bdde80c0bb7d90d2a2fad7a1e57e71e6490650f77eeec18238c29fa2c5644a65a38167aa6953dd00a4ed5dc53d02a39fcf88e3a66644a2cc71f02b8f541a2fae14345c66ba9b61d5697275584d314989645a485d75c80408064e54595c1f588d119829b9737a150af65585e7330c18178918459e0dc9c396ec5202e474d04d48df98a26a9126e393edadb89d547fe1dc98524856524b372f725e611b91b618d3a8334c48ca8d6433b59eea409204f0884d1d8ce657974b5ac8290cf99921d64e34e678307f9312239dfd9c3158fc22f34d7496cd5441222c99d499ad2e7cdbff0c566952bdfdfafd81c4c4a710b0b821df3cc369b048f29f89f38776c0d66b89359c0c9fb6e644301d4d50f86434ef78bdbd5964e1ada70175fdf65db700c7883613f2bab7eafda7447a11227a9797df7513e8502dbbd2ffea892a52533a7d1ca47b03ebae54482b855f13a6d1750ebb21f5e434d6fd9a1335e6737901396bea086560704fef8c4fab231695143523865bbf0e87e8f81f42c1e64a863346f7a0418a201d513ba2d1b517e985cb59808768903352784f666bd3ba87a4800e7277308a089f32ba0ead4533eb1bfc782/19/1280x720_3738192/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/kgpnVbBS/In-Shot-20260703-150740249.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - WIN Sports
-https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
-#EXTINF:-1 tvg-logo="https://corporate.univision.com/newco/wp-content/uploads/2019/05/TUDN_LOGO_COLOR.png" group-title="🔥 FIFA World Cup 2026" tvg-block="1",FIFA - TUDN Sports
-https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/kgpnVbBS/In-Shot-20260703-150740249.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - WIN Sports
+#DEAD:https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
+#DEAD:#EXTINF:-1 tvg-logo="https://corporate.univision.com/newco/wp-content/uploads/2019/05/TUDN_LOGO_COLOR.png" group-title="🔥 FIFA World Cup 2026",FIFA - TUDN Sports
+#DEAD:https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8

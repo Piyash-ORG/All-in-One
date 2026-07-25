@@ -93,17 +93,17 @@ https://stream.mux.com/j3aY4WhYfGqBJ00mbUp6xbHs7R3Kx51Cz5lUR8h2nAcU.m3u8
 https://stream.mux.com/COR77KOvspjd6W6dAxrO02x2TAVR00BrVtMxxIye2E36E.m3u8
 #EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/V32Xi0hq2P8/maxresdefault.jpg" group-title="Bengali Songs",47. (Mon Mane Na) - Title Song - Dev - Koel Mallick - Zubeen Garg - June Banerjee - Jeet Gannguli
 https://stream.mux.com/DkaW01OH8S55doZuFxygB3VeZwC7O00qsYnlAz900FrGxM.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/rY_0SOlmrdY/maxresdefault.jpg",48. Ankhiyon Se Goli Maare - (Dulhe Raja) - Sonu Nigam & Jaspinder Narula - Tips Official
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/rY_0SOlmrdY/maxresdefault.jpg" group-title="Hindi Songs",48. Ankhiyon Se Goli Maare - (Dulhe Raja) - Sonu Nigam & Jaspinder Narula - Tips Official
 https://stream.mux.com/6pUWF01R2ZeYzgOZNCIT3300EOXxvvfsdI6hGFDW4omGw.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/4mGzU0VbdSU/maxresdefault.jpg",49. Tu Mera Hero Number 1 - (Hero No 1) - Udit Narayan & Alka Yagnik - Tips Official
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/4mGzU0VbdSU/maxresdefault.jpg" group-title="Hindi Songs",49. Tu Mera Hero Number 1 - (Hero No 1) - Udit Narayan & Alka Yagnik - Tips Official
 https://stream.mux.com/4yHIIFyYTYRpbRusR8ntMQvt19GDxAmpL02013MBGn00fA.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/aPkJWkETcoo/maxresdefault.jpg",50. Suno Miya Suno - (Kyo Kii... Main Jhuth Nahin Bolta) - Anand Raj Anand - T-Series
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/aPkJWkETcoo/maxresdefault.jpg" group-title="Hindi Songs",50. Suno Miya Suno - (Kyo Kii... Main Jhuth Nahin Bolta) - Anand Raj Anand - T-Series
 https://stream.mux.com/wTDAbzvRUMLq2vvQKfsQIl193Mng2HjWdSWT48Fa02cI.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/kMlMVd7h74M/maxresdefault.jpg",51. Gore Tan Se Sarakta Jaye - (Aamdani Atthani Kharcha Rupaiya) - Sonu Nigam & Alka Yagnik - Tips Official
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/kMlMVd7h74M/maxresdefault.jpg" group-title="Hindi Songs",51. Gore Tan Se Sarakta Jaye - (Aamdani Atthani Kharcha Rupaiya) - Sonu Nigam & Alka Yagnik - Tips Official
 https://stream.mux.com/Z49DaT5baxnEFr68FChBhUO02dHiO86lDPP5uR02UjF00M.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/rap8SoUIPaw/maxresdefault.jpg",52. Dance Pe Chance - (Rab Ne Bana Di Jodi) - Sunidhi Chauhan & Labh Janjua - YRF
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/rap8SoUIPaw/maxresdefault.jpg" group-title="Hindi Songs",52. Dance Pe Chance - (Rab Ne Bana Di Jodi) - Sunidhi Chauhan & Labh Janjua - YRF
 https://stream.mux.com/LOyTP01W9FQms97hFW17r00C45yKUIbQPJK024AoZ9oJ8o.m3u8
-#EXTINF:-1 group-title="Hindi Songs" tvg-logo="https://i.ytimg.com/vi/EkxOXF9J77w/maxresdefault.jpg",53. Saree Ke Fall Sa - (R... Rajkumar) - Antara Mitra & Nakash Aziz - Eros Now
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/EkxOXF9J77w/maxresdefault.jpg" group-title="Hindi Songs",53. Saree Ke Fall Sa - (R... Rajkumar) - Antara Mitra & Nakash Aziz - Eros Now
 https://stream.mux.com/jdZwbU2QKN01EUm02GOLcNZWqYzn8ffCtCQU01qRJwZDWI.m3u8
 #EXTINF:-1 tvg-logo="https://i.ytimg.com/vi_webp/E45J_yOyUcA/maxresdefault.webp" group-title="Bollywood Songs",54. Phir Se - (Dhurandhar The Revenge) - Arijit Singh - Shashwat Sachdev
 https://stream.mux.com/A4bo1lywF2JXMmhqH02K5pR5D026CQUQVGspeYwN7ZkKI.m3u8
@@ -143,19 +143,19 @@ https://stream.mux.com/O02hUfneltuh02T3ZLvNHlFXuytzrkwSFeMF02Px5ehO7M.m3u8
 https://stream.mux.com/SlBaunTBy9spWZHoDusSB00fH2vYUoaS91EaHRA01OpI00.m3u8
 #EXTINF:-1 tvg-logo="https://img.youtube.com/vi/2uUmHTgT65I/maxresdefault.jpg" group-title="Bollywood Songs",72. Dhoom Machale - (Dhoom) - Sunidhi Chauhan - Pritam
 https://stream.mux.com/HN7b02odvyXfmETpvyZCPYh8e00KAk32ZCJs00g8t8O4Ns.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/nDjloeIB3Pc/maxresdefault.jpg" group-title="Bollywood Songs",73.  Sitaare - (Ikkis) - Arijit Singh & Amitabh B
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/nDjloeIB3Pc/maxresdefault.jpg" group-title="Bollywood Songs",73. Sitaare - (Ikkis) - Arijit Singh & Amitabh B
 https://stream.mux.com/01sFMBXLyhBDdZtv8IdKaSItAImVU3BayefC600g93njg.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/J_d_Q3pTYcc/maxresdefault.jpg" group-title="Bollywood Songs",74.  Chunnari Chunnari Let’s Go - (Hai Jawani Toh Ishq Hona Hai) - Akshay & IP
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/J_d_Q3pTYcc/maxresdefault.jpg" group-title="Bollywood Songs",74. Chunnari Chunnari Let’s Go - (Hai Jawani Toh Ishq Hona Hai) - Akshay & IP
 https://stream.mux.com/h7MccdjyN74fUZOOs6OYHYqTSXeMzUJ2XjySpcHZicM.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/e1edxTqJnKk/maxresdefault.jpg" group-title="Bollywood Songs",75.  Maahi - (Raaz 2) - Toshi & Sharib Sabri - Mohit Suri
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/e1edxTqJnKk/maxresdefault.jpg" group-title="Bollywood Songs",75. Maahi - (Raaz 2) - Toshi & Sharib Sabri - Mohit Suri
 https://stream.mux.com/ZC1Khe9aDtjOeaZVVignF00o9OwSdrgK5nmrDn00wWSzI.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/PkhfKq9m0Uo/maxresdefault.jpg" group-title="Bollywood Songs",76.  Tujhe Sochta Hoon - (Jannat 2) - KK - Pritam
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/PkhfKq9m0Uo/maxresdefault.jpg" group-title="Bollywood Songs",76. Tujhe Sochta Hoon - (Jannat 2) - KK - Pritam
 https://stream.mux.com/rmuM02zUM8W01FLIStVFz0200bC9CtwPsGX2c02adpNbaWL4.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/jiBG2UT1XS0/maxresdefault.jpg" group-title="Bollywood Songs",77.  Kabhii Tumhhe Female Version - (Shershaah) - Palak Muchhal - Javed Mohsin
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/jiBG2UT1XS0/maxresdefault.jpg" group-title="Bollywood Songs",77. Kabhii Tumhhe Female Version - (Shershaah) - Palak Muchhal - Javed Mohsin
 https://stream.mux.com/Nnb5gzI01SXOm5qx4LbfY5gCnAD2DeAu1usT1FBEZk8k.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/lzEop75AeOk/maxresdefault.jpg" group-title="Bollywood Songs",78.  Naiyo Lagda - (Kisi Ka Bhai Kisi Ki Jaan) - Kamaal K & Palak M - Himesh R
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/lzEop75AeOk/maxresdefault.jpg" group-title="Bollywood Songs",78. Naiyo Lagda - (Kisi Ka Bhai Kisi Ki Jaan) - Kamaal K & Palak M - Himesh R
 https://stream.mux.com/Q2L9l029z02k0200Yo5HRwnY3S58sRL01anlwlubNmdWSLqU.m3u8
-#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/p_iG4mrFV8s/maxresdefault.jpg" group-title="Bollywood Songs",79.  Ek Pyaar Ka Nagma - (Zee Cine Awards) - Palak Muchhal - Mithoon
+#EXTINF:-1 tvg-logo="https://img.youtube.com/vi/p_iG4mrFV8s/maxresdefault.jpg" group-title="Bollywood Songs",79. Ek Pyaar Ka Nagma - (Zee Cine Awards) - Palak Muchhal - Mithoon
 https://stream.mux.com/5ZeMmWPshUe4oxdnrnQoNK9J01xcMHCHNZQNBidIzzTY.m3u8
 #EXTINF:-1 tvg-logo="https://img.youtube.com/vi/aKdqQ5BC_S4/maxresdefault.jpg" group-title="Bollywood Songs",80. Main Rang Sharbaton Ka - (Phata Poster Nikhla Hero) - Atif Aslam & Chinmayi - Pritam
 https://stream.mux.com/kjkFIm6A02RN4QRwJmDD41851O8yhTL4WC5FceT6g0102k.m3u8
@@ -175,3 +175,11 @@ https://stream.mux.com/toOgqoAnVbDIeYRSRtR01kz3Bkzhz00bhTqxf3kPxAGW00.m3u8
 https://stream.mux.com/6hKdaEJVRu501BoxMAtlMAvV01i9hBiqLpGhS8ElmIlCo.m3u8
 #EXTINF:-1 tvg-logo="https://img.youtube.com/vi/vnlk8V-q0oU/maxresdefault.jpg" group-title="Bollywood Songs",88. Jhalak Dikhla Ja - (Aksar) - Himesh Reshammiya - Himesh Reshammiya
 https://stream.mux.com/ui01ii6jYQSsdJ9wPyjPmZ2Qo2uUkIVGrRY01FaDgq9UU.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/KvWylZjOrYs/maxresdefault.jpg" group-title="Hindi Songs",89. Dilbar Dilbar - (Sirf Tum) - Sushmita Sen & Sanjay Kapoor - T-Series Bollywood Classics
+https://stream.mux.com/02B5YhamrJh3aujSh8RmVi00DkhjGgPfeF1MINoDZv3qc.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/94A9SNq6sBA/maxresdefault.jpg" group-title="Hindi Songs",90. Tinku Jiya - (Yamla Pagla Deewana) - Dharmendra & Bobby Deol - T-Series
+https://stream.mux.com/ntIuc6ytFqgt7rt7w502zxG3GlAfFVdiVxC01Akb3iQEM.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/B2aHXbnu9dI/maxresdefault.jpg" group-title="Hindi Songs",91. Main Agar Saamne - (Raaz) - Dino Morea & Bipasha Basu - Tips Official
+https://stream.mux.com/pJI6Ffvl1iyQXTXQiIPAweR3NX02fgFZs029bRkZs00cYs.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/_1KqB_17dJE/maxresdefault.jpg" group-title="Hindi Songs",92. Kuch Kuch Hota Hai (Title Track) - (Kuch Kuch Hota Hai) - Shahrukh Khan & Kajol - Sony Music India
+https://stream.mux.com/aMLg00MnByVEnKjRacrbOLg7QiP28FeJR6HKRECs01JoE.m3u8

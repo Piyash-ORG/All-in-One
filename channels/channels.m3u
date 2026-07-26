@@ -1,14 +1,16 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/1800396838207430656/kgXkG6AR_400x400.jpg" group-title="Music",9XM Music
-https://wiselp.wiseplayout.com/9XM/HD1080/HD1080.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/d4F75PgX/channels4-profile-2.jpg" group-title="Music",YRF Music HD
-https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/R4SYmBC4/In-Shot-20260714-204612635.jpg" group-title="Sports",Fox Sports
 http://85.237.89.160:9590/usa-s/FOX-SPORTS-1/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/R4SYmBC4/In-Shot-20260714-204612635.jpg" group-title="Sports",Fox Sports
 https://d1jzu95oc8fgt3.cloudfront.net/FOX_Sports.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/4Rn1Q7zK/In-Shot-20260714-230345810.jpg" group-title="Sports",BEIN Sports Xtra
 https://bein-esp-xumo.amagi.tv/playlistR1080p.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Sangeet_Bangla.jpg" group-title="Bangla",Sangeet Bangla
+https://cdn-4.pishow.tv/live/1143/master.m3u8
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/1800396838207430656/kgXkG6AR_400x400.jpg" group-title="Music",9XM Music
+https://wiselp.wiseplayout.com/9XM/HD1080/HD1080.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co.com/d4F75PgX/channels4-profile-2.jpg" group-title="Music",YRF Music HD
+https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/wF4fxSd4/In-Shot-20260714-231032777.jpg" group-title="Bangla",My TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/mytv-up-off.stream/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/DD4wxQNg/In-Shot-20260714-231045313.jpg" group-title="Bangla",Mohona TV
@@ -157,8 +159,6 @@ https://cdn-4.pishow.tv/live/1231/1231_1.m3u8
 https://cdn-4.pishow.tv/live/969/master.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Bangla__TV.jpg" group-title="Bangla",Bangla+ TV
 https://live-stream.utkalbongo.com/hls/livebanglatvstream.m3u8
-#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Sangeet_Bangla.jpg" group-title="Bangla",Sangeet Bangla
-https://cdn-4.pishow.tv/live/1143/master.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/R_Plus_News.jpg" group-title="Bangla",R Plus News
 https://thelegitpro.in/pntv/rplusnews24x7/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Calcutta_News.jpg" group-title="Bangla",Calcutta News

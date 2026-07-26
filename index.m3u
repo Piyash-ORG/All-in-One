@@ -1,14 +1,6 @@
 #EXTM3U x-tvg-url="YOUR_EPG_URL_HERE.xml"
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/ZIM_vs_IND_-_3rd_T20I.jpg" group-title="Live Events",ZIM vs IND - 3rd T20I
 https://bpl24middleeast.akamaized.net/hls/live/2109311/j15klM/level_0.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026",Fancode
-https://in-mc-flive.fancode.com/mumbai/143353_english_dash_71145_1drmta-di_h264/index.mpd
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Fancode
-https://cdn-direct.vercel.app/fancode2.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/6cxM0bLs/In-Shot-20260717-194848655.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Tapmad
-https://cdn-direct.vercel.app/tapmad1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co.com/6cxM0bLs/In-Shot-20260717-194848655.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Tapmad
-https://cdn-direct.vercel.app/tapmad2.m3u8
 #DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/JF8HH0RQ/images-17.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - Fox Sports
 #DEAD:https://fiveo4.casadenoval.uk/main/secure/22286877859d47a5f4dc89614376b0a276a85780774c726cedb5f2449a228ad1/1784413606/fox-usa.m3u8
 #DEAD:#EXTINF:-1 tvg-logo="https://i.ibb.co.com/jZBSzr66/images-18.jpg" group-title="🔥 FIFA World Cup 2026",FIFA - BBC Sports

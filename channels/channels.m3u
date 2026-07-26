@@ -83,8 +83,8 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1729/output/index.m3u8
 https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/index.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Bangla_Vision.jpg" group-title="AKASH GO" tvg-block="1",Bangla Vision
 https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8
-#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/BTV.jpg" group-title="AKASH GO" tvg-block="1",BTV
-https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/BTV.jpg" group-title="AKASH GO",BTV
+http://103.165.93.31:8095/btv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/Al_Jazeera.jpg" group-title="AKASH GO" tvg-block="1",Al Jazeera
 https://owrcovcrpy.gpcdn.net/bpk-tv/1721/output/index.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/image/ntv.jpg" group-title="AKASH GO" tvg-block="1",NTV

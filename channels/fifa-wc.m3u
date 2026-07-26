@@ -1,4 +1,6 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/id/maxresdefault.jpg" group-title="Live Events",ZIM vs IND - 3rd T20I
+https://bpl24middleeast.akamaized.net/hls/live/2109311/j15klM/level_0.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026",Fancode
 https://in-mc-flive.fancode.com/mumbai/143353_english_dash_71145_1drmta-di_h264/index.mpd
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/Mxv4gvcC/In-Shot-20260717-194812714.jpg" group-title="🔥 FIFA World Cup 2026" tvg-block="1",Fancode

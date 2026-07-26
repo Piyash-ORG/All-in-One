@@ -1,6 +1,17 @@
 {
   "rules": [
     {
+      "domain": "in-mc-flive.fancode.com",
+      "user_agent": "ReactNativeVideo/8.4.0(Linux;Android13)AndroidXMedia3/1.1.1",
+      "headers": {
+        "Referer": "https://fancode.com/"
+      },
+      "is_drm": true,
+      "drm_type": "clearkey",
+      "drm_license_url": "",
+      "drm_key": "d271bd6480344bf5938574325cbbfcd7:88b68ebb9588d70ecef11f28c5099205"
+    },
+    {
       "domain": "server.thelegitpro.in",
       "user_agent": "oxoo/1.3.9.d (Linux;Android 7.1.2) ExoPlayerLib/2.14.1",
       "headers": {},
@@ -275,15 +286,6 @@
     },
     {
       "domain": "ubuntu.moonplex.net:8080",
-      "user_agent": "oxoo/1.3.9.d (Linux;Android 7.1.2) ExoPlayerLib/2.14.1",
-      "headers": {},
-      "is_drm": false,
-      "drm_type": "",
-      "drm_license_url": "",
-      "drm_key": ""
-    },
-    {
-      "domain": "madanitv.assadikb.workers.dev",
       "user_agent": "oxoo/1.3.9.d (Linux;Android 7.1.2) ExoPlayerLib/2.14.1",
       "headers": {},
       "is_drm": false,

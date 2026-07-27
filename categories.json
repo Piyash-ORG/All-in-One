@@ -28,12 +28,65 @@
       "name": "Bollywood Movies",
       "logo": "https://all-in-one-14ux.vercel.app/icons8-movie-100-1.png",
       "m3uUrl": "https://all-in-one-14ux.vercel.app/movies/bollywood-movies.m3u"
-      // এখানে types না দিলে অ্যাপ নিজে থেকেই normal ধরে নেবে
     },
     {
       "name": "Hollywood Movies",
       "logo": "https://all-in-one-14ux.vercel.app/icons8-movie-100-2.png",
       "m3uUrl": "https://all-in-one-14ux.vercel.app/movies/hollywood-movies.m3u"
+    },
+    {
+      "name": "Dirilis Ertugrul S1 - Toffee",
+      "logo": "https://i.ibb.co.com/RGN8WmQ3/Season-1.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Dirilis Ertugrul S2 - Toffee",
+      "logo": "https://i.ibb.co.com/gZFfcjX2/Season-2.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Dirilis Ertugrul S3 - Toffee",
+      "logo": "https://i.ibb.co.com/vCX8yCzk/Season-3.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Dirilis Ertugrul S4 - Toffee",
+      "logo": "https://i.ibb.co.com/sdg9Lfz8/Season-4.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Dirilis Ertugrul S5 - Toffee",
+      "logo": "https://i.ibb.co.com/PsYtgL6Q/Season-5.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Kurulus Osman S1 - Toffee",
+      "logo": "https://i.ibb.co.com/QLr78cX/Season-1.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Kurulus Osman S2 - Toffee",
+      "logo": "https://i.ibb.co.com/JWx3zpYy/Season-2.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Kurulus Osman S3 - Toffee",
+      "logo": "https://i.ibb.co.com/S4TZHXJX/Season-3.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
+    },
+    {
+      "name": "Kurulus Osman S4 - Toffee",
+      "logo": "https://i.ibb.co.com/FC8bB4Q/Season-4.jpg",
+      "m3uUrl": "YOUR_M3U_URL_HERE",
+      "types": "thumb"
     }
   ]
-}
+    }

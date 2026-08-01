@@ -11,7 +11,7 @@ https://stream.mux.com/gUk2Tsr028s01O2LgAArar88hrgnpek8JLMVeTbCVsnwM.m3u8
 https://stream.mux.com/WHGJkkr5suQFQCm9o2TWDaUvyufGuwMUraoMRtj5GrI.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/58dPOdqCZTjS01N1FB8fGyeNzkAG4ozgKQJyhL7WWowc/thumbnail.jpg" group-title="Kurlus Osman",S04 E01 • Kurlus Osman • AQ
 https://stream.mux.com/58dPOdqCZTjS01N1FB8fGyeNzkAG4ozgKQJyhL7WWowc.m3u8
-#EXTINF:-1 tvg-sub="https://pureweb.vercel.app/subtitles/shaidai/Episode-21.ass" tvg-logo="https://image.mux.com/H9qPgCUfOfG00kKp9TrWNvgxxQVNHAO6z8d00NDpmnqTw/thumbnail.jpg" group-title="Shaidai",S01 E21 • Shaidai • AQ
+#EXTINF:-1 tvg-logo="https://image.mux.com/H9qPgCUfOfG00kKp9TrWNvgxxQVNHAO6z8d00NDpmnqTw/thumbnail.jpg" group-title="Shaidai",S01 E21 • Shaidai • AQ
 https://stream.mux.com/H9qPgCUfOfG00kKp9TrWNvgxxQVNHAO6z8d00NDpmnqTw.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/pdLlC4zise2dUthnQMfrWSXAjMEHJX1lxQw8tGL6CIg/thumbnail.jpg" group-title="Aye Musht E Khaak",S01 E08 • Aye Musht E Khaak • AQ
 https://stream.mux.com/pdLlC4zise2dUthnQMfrWSXAjMEHJX1lxQw8tGL6CIg.m3u8
@@ -39,7 +39,7 @@ https://archive.org/download/darama_ldz101/Evergreen-Hits-of-KK-Audio-Jukebox-72
 https://stream.mux.com/1JfYVjhrt800qpzFum6mSzr82T0200vlhWHnvU72z9yZTg.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/vKzoPHRxeQklzo0000tAelSqRs1LZjDu53zGU006gOLjo00/thumbnail.jpg" group-title="Aye Musht E Khaak",S01 E19 • Aye Musht-E-Khaak • AQ
 https://stream.mux.com/vKzoPHRxeQklzo0000tAelSqRs1LZjDu53zGU006gOLjo00.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/Fqy9ry7b/VDOXUMKGTDQOSHU.jpg" group-title="Aye Musht E Khaak" tvg-block="1",S01 E01 • Aye Musht-E-Khaak • AQ
+#EXTINF:-1 tvg-logo="https://i.ibb.co/Fqy9ry7b/VDOXUMKGTDQOSHU.jpg" group-title="Aye Musht E Khaak",S01 E01 • Aye Musht-E-Khaak • AQ
 https://pub-d572b99c0cef489bbbee1e244303b4c2.r2.dev/e5ed9ee6-9124-4816-b2bf-a4838e488eae.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_14_Ge5fjoc37.jpg" group-title="Khumar",S01 E14 • Khumar • AQ
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2014.mp4
@@ -47,7 +47,7 @@ https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2014.mp4
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2013.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_12_visVSvA8B.jpg" group-title="Khumar",S01 E12 • Khumar • AQ
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2012.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_11_zLA30RC4X.jpg" group-title="Khumar" tvg-block="1",S01 E11 • Khumar • AQ
+#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_11_zLA30RC4X.jpg" group-title="Khumar",S01 E11 • Khumar • AQ
 https://pub-d572b99c0cef489bbbee1e244303b4c2.r2.dev/68e9e0d6-d35f-489b-84ba-c15848a2894f.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_10_Oo39k3RdN.jpg" group-title="Khumar",S01 E10 • Khumar • AQ
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2010%20geo.mp4
@@ -111,7 +111,7 @@ https://archive.org/download/drama_lds/Shaidai%20Ep%203%20-%20Geo%20TV.ia.mp4
 https://archive.org/download/drama_lds/Shaidai%20Ep%202%20-%20Geo%20TV.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_1_-_Geo_TV_S2YQ3YNjX.jpg" group-title="Shaidai",S01 E01 • Shaidai • AQ
 https://archive.org/download/drama_lds/Shaidai%20Ep%201%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://image.mux.com/3rirVAWb9IwlH2Bc9wnJkulyWlKa43MqFhex02H7EHT8/thumbnail.jpg" group-title="Naagin" tvg-block="1",S07 E36 • Naagin • AQ
+#EXTINF:-1 tvg-logo="https://image.mux.com/3rirVAWb9IwlH2Bc9wnJkulyWlKa43MqFhex02H7EHT8/thumbnail.jpg" group-title="Naagin",S07 E36 • Naagin • AQ
 https://pub-d572b99c0cef489bbbee1e244303b4c2.r2.dev/56097888-f308-4567-a27f-e7cf9cb08584.mp4
 #EXTINF:-1 tvg-logo="https://image.mux.com/4r5CTVMhl24ZkKi1fE557v9CD15Od8ba02dh2Xulc6AM/thumbnail.jpg" group-title="Naagin",S07 E35 • Naagin • AQ
 https://stream.mux.com/4r5CTVMhl24ZkKi1fE557v9CD15Od8ba02dh2Xulc6AM.m3u8

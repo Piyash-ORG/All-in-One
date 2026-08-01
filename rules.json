@@ -12,6 +12,18 @@
       "drm_key": "d271bd6480344bf5938574325cbbfcd7:88b68ebb9588d70ecef11f28c5099205"
     },
     {
+      "domain": "kamrul-mc-ar-baki-bc-toder-baper-stream-monekore-user-kor.nurmd2006-official.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://torongoplus.vercel.app",
+        "Referer": "https://torongoplus.vercel.app/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
       "domain": "server.thelegitpro.in",
       "user_agent": "oxoo/1.3.9.d (Linux;Android 7.1.2) ExoPlayerLib/2.14.1",
       "headers": {},

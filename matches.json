@@ -1,0 +1,33 @@
+{
+  "matches": [
+    {
+      "id": "1",
+      "league_name": "Premier League",
+      "league_logo": "https://example.com/logos/pl.png",
+      "team1_name": "Arsenal",
+      "team1_flag": "https://example.com/flags/arsenal.png",
+      "team2_name": "Chelsea",
+      "team2_flag": "https://example.com/flags/chelsea.png",
+      "start_time": "2026-08-02T18:00:00Z",
+      "end_time": "2026-08-02T20:30:00Z",
+      "stream_urls": [
+        "https://example.com/live/stream1/index.m3u8",
+        "https://example.com/live/stream2/index.m3u8"
+      ]
+    },
+    {
+      "id": "2",
+      "league_name": "UEFA Champions League",
+      "league_logo": "https://example.com/logos/ucl.png",
+      "team1_name": "Real Madrid",
+      "team1_flag": "https://example.com/flags/real_madrid.png",
+      "team2_name": "Barcelona",
+      "team2_flag": "https://example.com/flags/barcelona.png",
+      "start_time": "2026-08-03T20:00:00Z",
+      "end_time": "2026-08-03T22:30:00Z",
+      "stream_urls": [
+        "https://example.com/live/elclassico.m3u8"
+      ]
+    }
+  ]
+}

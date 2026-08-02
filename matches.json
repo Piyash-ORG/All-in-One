@@ -5,7 +5,7 @@
       "league_name": "Premier League",
       "league_logo": "https://example.com/logos/pl.png",
       "team1_name": "Arsenal",
-      "team1_flag": "https://example.com/flags/arsenal.png",
+      "team1_flag": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
       "team2_name": "Chelsea",
       "team2_flag": "https://example.com/flags/chelsea.png",
       "start_time": "2026-08-02T18:00:00Z",

@@ -418,10 +418,12 @@ fun ExoPlayerView(
         }
     }
 
+    // 🔥 বাফারিং টাইমআউটের জন্য নতুন জব
+    var bufferingJob by remember { mutableStateOf<Job?>(null) }
+
     DisposableEffect(exoPlayer) {
         val listener = object : Player.Listener {
             
-            // 🔥 প্লে/পজ স্টেট রিয়েল-টাইম আপডেট করার জন্য এটি যুক্ত করা হলো
             override fun onIsPlayingChanged(isPlayingState: Boolean) {
                 isPlaying = isPlayingState
             }
@@ -430,8 +432,25 @@ fun ExoPlayerView(
                 playbackState = state
                 
                 if (state == Player.STATE_READY) {
+                    // প্লে শুরু হলে বাফারিং জব বাতিল করে দিন
+                    bufferingJob?.cancel()
+                    
                     val realDuration = exoPlayer.duration
                     duration = if (realDuration > 0 && realDuration != C.TIME_UNSET) realDuration else 0L
+                }
+
+                if (state == Player.STATE_BUFFERING) {
+                    // বাফারিং শুরু হলেই ৬ সেকেন্ডের টাইমার চালু হবে
+                    bufferingJob?.cancel()
+                    bufferingJob = coroutineScope.launch {
+                        delay(6000L) // ৬ সেকেন্ড অপেক্ষা
+                        if (isActive && playbackState == Player.STATE_BUFFERING) {
+                            // ৬ সেকেন্ড পার হয়ে গেছে, এখনো বাফারিং! এবার নেক্সট চ্যানেলে যাও
+                            showToast("Channel timeout! Skipping to next channel...")
+                            currentServerIndex = 0 
+                            currentIndex = if (currentIndex < playlist.size - 1) currentIndex + 1 else 0
+                        }
+                    }
                 }
 
                 if (state == Player.STATE_ENDED) {
@@ -496,7 +515,11 @@ fun ExoPlayerView(
             }
         }
         exoPlayer.addListener(listener)
-        onDispose { exoPlayer.removeListener(listener); exoPlayer.release() }
+        onDispose { 
+            bufferingJob?.cancel() // মেমরি লিক এড়াতে
+            exoPlayer.removeListener(listener)
+            exoPlayer.release() 
+        }
     }
 
      LaunchedEffect(isPlaying, isControllerVisible) {

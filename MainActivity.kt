@@ -944,15 +944,17 @@ fun CategoriesScreen(
             } else {
                 Spacer(modifier = Modifier.height(8.dp))
                 
-                // 🔥 ক্যাটাগরির ভেতরের সাব-গ্রুপ লজিক (tvg-group দিয়ে)
+                // 🔥 ক্যাটাগরির ভেতরের সাব-গ্রুপ লজিক
                 var selectedCatGroup by remember { mutableStateOf("All") }
                 val catGroups = remember(categoryChannels) {
                     listOf("All") + categoryChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
                 }
                 val displayCatChannels = if (selectedCatGroup == "All") categoryChannels else categoryChannels.filter { it.group.equals(selectedCatGroup, ignoreCase = true) }
 
-                // 🔥 সাব-গ্রুপ টপ বার (যদি ১ টার বেশি গ্রুপ থাকে)
+                // 🔥 সাব-গ্রুপ টপ বার (সাউন্ড সহ)
                 if (catGroups.size > 1) {
+                    val view = LocalView.current // 🔥 সাউন্ডের জন্য View নেওয়া হলো
+                    
                     LazyRow(
                         modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -961,13 +963,21 @@ fun CategoriesScreen(
                         items(catGroups) { groupName ->
                             val isSelected = selectedCatGroup == groupName
                             var isGroupFocused by remember { mutableStateOf(false) }
+                            var wasFocused by remember { mutableStateOf(false) } // 🔥 সাউন্ড ট্র্যাক করার জন্য
                             
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(50))
                                     .background(if (isSelected) AccentYellow else if (isGroupFocused) Color.White.copy(alpha = 0.2f) else CardBg)
                                     .border(2.dp, if (isGroupFocused) Color.White else Color.Transparent, RoundedCornerShape(50))
-                                    .onFocusChanged { isGroupFocused = it.isFocused }
+                                    .onFocusChanged { state -> 
+                                        isGroupFocused = state.isFocused 
+                                        // 🔥 ফোকাস আসলেই সাউন্ড হবে
+                                        if (state.isFocused && !wasFocused) {
+                                            view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                        }
+                                        wasFocused = state.isFocused
+                                    }
                                     .onKeyEvent { event ->
                                         if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
                                             if (event.type == KeyEventType.KeyUp) { selectedCatGroup = groupName; true } else false
@@ -984,7 +994,6 @@ fun CategoriesScreen(
                 }
 
                 Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
-                    // 🔥 JSON এর categories.json থেকে "types" চেক করা হচ্ছে
                     val isThumb = selectedCategory!!.types == "thumb"
                     
                     val columns = if (isTv) {
@@ -1004,7 +1013,6 @@ fun CategoriesScreen(
                         itemsIndexed(items = displayCatChannels, key = { index, channel -> channel.url + index }) { index, channel ->
                             val isLastFocusedChannel = channel.url == lastFocusedUrl
                             
-                            // 🔥 শুধুমাত্র JSON এর types="thumb" হলেই থাম্বনেইল দেখাবে!
                             if (isThumb) {
                                 ChannelThumbCard(
                                     channel = channel,
@@ -1030,7 +1038,7 @@ fun CategoriesScreen(
             }
         }
     }
-}
+}       
 @Composable
 fun CategoryCard(
     category: Category, 

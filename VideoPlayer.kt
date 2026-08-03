@@ -310,8 +310,16 @@ fun ExoPlayerView(
     }
 
     LaunchedEffect(currentIndex) {
-        // বুট অন লঞ্চের জন্য লাস্ট চ্যানেল সেভ রাখা হচ্ছে
-        prefs.edit().putInt("last_played_channel_index", currentIndex).apply()
+        // 🔥 বুট অন লঞ্চের জন্য লাস্ট চ্যানেল সেভ রাখা হচ্ছে (URL, Name, Logo সহ)
+        val currentChannel = playlist.getOrNull(currentIndex)
+        if (currentChannel != null) {
+            prefs.edit()
+                .putInt("last_played_channel_index", currentIndex)
+                .putString("last_played_channel_url", currentChannel.url)
+                .putString("last_played_channel_name", currentChannel.name)
+                .putString("last_played_channel_logo", currentChannel.logo)
+                .apply()
+        }
         
         showChannelToast = true
         delay(2000L)

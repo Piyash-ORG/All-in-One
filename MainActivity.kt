@@ -1420,6 +1420,95 @@ fun ChannelListCard(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun ChannelCircleCard(
+    channel: Channel, isFavorite: Boolean, onPlay: () -> Unit, onToggleFav: () -> Unit,
+    isLastFocused: Boolean, focusRequester: FocusRequester, onFocus: () -> Unit
+) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val isFocused by interactionSource.collectIsFocusedAsState()
+    var isLongPressHandled by remember { mutableStateOf(false) }
+    val view = LocalView.current
+    var wasFocused by remember { mutableStateOf(false) }
+
+    val scale by animateFloatAsState(
+        targetValue = if (isFocused) 1.12f else 1f, // ফোকাস হলে কার্ডটা সুন্দরভাবে বড় হবে
+        label = "focus_scale"
+    )
+
+    LaunchedEffect(isFocused) { if (isFocused) onFocus() }
+    val modifier = if (isLastFocused) Modifier.focusRequester(focusRequester) else Modifier
+
+    Column(
+        modifier = modifier
+            .onFocusChanged { state ->
+                if (state.isFocused && !wasFocused) {
+                    view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                }
+                wasFocused = state.isFocused
+            }
+            .onKeyEvent { event ->
+                if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
+                    when (event.type) {
+                        KeyEventType.KeyDown -> {
+                            if (event.nativeKeyEvent.repeatCount > 0) {
+                                if (!isLongPressHandled) { isLongPressHandled = true; onToggleFav() }
+                                true 
+                            } else false
+                        }
+                        KeyEventType.KeyUp -> { 
+                            if (isLongPressHandled) { isLongPressHandled = false; true } else { onPlay(); true }
+                        }
+                        else -> false
+                    }
+                } else false
+            }
+            .combinedClickable(interactionSource = interactionSource, indication = null, onClick = onPlay, onLongClick = onToggleFav)
+            .focusable() 
+            .padding(10.dp) 
+            .fillMaxWidth()
+            .scale(scale),
+        horizontalAlignment = Alignment.CenterHorizontally 
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(0.85f)
+                .aspectRatio(1f) // একদম পারফেক্ট গোল করার জন্য
+                .clip(CircleShape)
+                .background(Color.White)
+                .border(
+                    width = if (isFocused) 4.dp else 0.dp, 
+                    color = if (isFocused) AccentYellow else Color.Transparent, 
+                    shape = CircleShape
+                )
+                .padding(12.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            AsyncImage(
+                model = channel.logo, 
+                contentDescription = channel.name,
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(CircleShape)
+            )
+        }
+        
+        Spacer(modifier = Modifier.height(10.dp))
+        
+        Text(
+            text = channel.name, 
+            color = Color.White, 
+            fontWeight = FontWeight.Bold, 
+            fontSize = 13.sp, 
+            maxLines = 1, 
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
 data class BannerItem(
     val imageUrl: String,
     val redirectUrl: String,

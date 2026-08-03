@@ -512,8 +512,6 @@ fun ExoPlayerView(
             delay(500) // ৫০০ms পর পর স্মুথ রিফ্রেশ
         }
     }
-
-    // 🔥 ২. মুছে ফেলা জায়গায় এই নতুন আপডেট করা ব্লকটি বসান
     LaunchedEffect(currentIndex, currentServerIndex, streamRules, exoPlayer) {
         currentAudioTrackIndex = 0 
         
@@ -532,18 +530,28 @@ fun ExoPlayerView(
 
         val mediaItemBuilder = MediaItem.Builder().setUri(url)
 
+        // 🔥 কাস্টম সাবটাইটেল থাকলে সেটা যুক্ত করা
         if (!channel.subtitleUrl.isNullOrEmpty()) {
             val subtitleConfig = MediaItem.SubtitleConfiguration.Builder(Uri.parse(channel.subtitleUrl))
                 .setMimeType(MimeTypes.TEXT_SSA) 
-                .setLanguage("bn")
+                .setLanguage("bn") // কাস্টম সাবটাইটেলের ভাষা 'bn' সেট করা হলো
                 .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
                 .build()
             mediaItemBuilder.setSubtitleConfigurations(listOf(subtitleConfig))
         }
 
-        trackSelector.parameters = trackSelector.buildUponParameters()
-            .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, !isSubtitleEnabled)
-            .build()
+        // 🔥 Embedded CC পুরোপুরি বন্ধ করার ম্যাজিক লজিক
+        val paramsBuilder = trackSelector.buildUponParameters()
+        if (channel.subtitleUrl.isNullOrEmpty() || !isSubtitleEnabled) {
+            // কাস্টম সাবটাইটেল না থাকলে বা অফ থাকলে সব টেক্সট ট্র্যাক (CC) সম্পূর্ণ ব্লক করে দিবে
+            paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
+        } else {
+            // কাস্টম সাবটাইটেল থাকলে শুধু 'bn' ভাষার (কাস্টম) সাবটাইটেলটিই পারমিশন পাবে
+            paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+            paramsBuilder.setPreferredTextLanguage("bn") 
+            paramsBuilder.setIgnoredTextSelectionFlags(C.SELECTION_FLAG_FORCED or C.SELECTION_FLAG_AUTOSELECT)
+        }
+        trackSelector.parameters = paramsBuilder.build()
 
         if (config.isDrm) {
             val drmBuilder = when (config.drmType.lowercase(Locale.getDefault())) {
@@ -562,7 +570,6 @@ fun ExoPlayerView(
 
         exoPlayer.setMediaSource(mediaSource)
         
-        // 🔥 ম্যাজিক লজিক: HW/SW টগল করলে আগের পজিশন থেকে প্লে হবে
         if (url == lastLoadedUrl && currentPosition > 0L) {
             exoPlayer.seekTo(currentPosition)
         } else {

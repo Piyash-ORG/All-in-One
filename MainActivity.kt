@@ -322,34 +322,50 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
             isLoading = false
         }
     }
-    // 🔥 আল্ট্রা-স্মার্ট অটো-প্লে লজিক: সাবটাইটেল সহ টেম্পোরারি চ্যানেল বানিয়ে প্লে করবে
+
+    // 🔥 আল্ট্রা-স্মার্ট অটো-প্লে লজিক: অরিজিনাল প্লেলিস্ট ফেচ করে প্লে করবে
     LaunchedEffect(channels) {
         if (shouldAutoPlay && channels.isNotEmpty() && currentPlayingIndex == null) {
-            // 🔥 এখানে ?: "" ব্যবহার করা হয়েছে যাতে এগুলো কখনোই null না হয়
             val lastUrl = prefs.getString("last_played_channel_url", "") ?: ""
             val lastName = prefs.getString("last_played_channel_name", "Saved Channel") ?: "Saved Channel"
             val lastLogo = prefs.getString("last_played_channel_logo", "") ?: ""
-            val lastSub = prefs.getString("last_played_channel_sub", "")
+            val lastSub = prefs.getString("last_played_channel_sub", "") ?: ""
+            val lastPlaylistUrl = prefs.getString("last_played_playlist_url", "") ?: "" // 🔥 ক্যাটাগরি প্লেলিস্ট URL
 
             if (lastUrl.isNotEmpty()) {
-                val foundIndex = channels.indexOfFirst { it.url == lastUrl }
-                if (foundIndex != -1) {
-                    // চ্যানেলটি মেইন লিস্টে থাকলে সেখান থেকেই প্লে করবে
-                    currentPlayingList = channels
-                    currentPlayingIndex = foundIndex
+                if (lastPlaylistUrl.isNotEmpty()) {
+                    // 🔥 ক্যাটাগরির অরিজিনাল প্লেলিস্ট ফেচ করা হচ্ছে
+                    scope.launch {
+                        try {
+                            val fetchedChannels = withContext(Dispatchers.IO) { M3uParser.fetchChannels(lastPlaylistUrl) }
+                            val foundIndex = fetchedChannels.indexOfFirst { it.url == lastUrl }
+                            
+                            if (foundIndex != -1) {
+                                currentPlayingList = fetchedChannels
+                                currentPlayingIndex = foundIndex
+                            } else {
+                                // ফলব্যাক
+                                val customChannel = Channel(lastName, "Saved", lastUrl, mutableListOf(lastUrl), lastLogo, lastSub.ifEmpty { null })
+                                currentPlayingList = listOf(customChannel)
+                                currentPlayingIndex = 0
+                            }
+                        } catch (e: Exception) {
+                            val customChannel = Channel(lastName, "Saved", lastUrl, mutableListOf(lastUrl), lastLogo, lastSub.ifEmpty { null })
+                            currentPlayingList = listOf(customChannel)
+                            currentPlayingIndex = 0
+                        }
+                    }
                 } else {
-                    // 🔥 ক্যাটাগরি বা সার্চ থেকে আসা চ্যানেল, যা মেইন লিস্টে নেই
-                    // তাই সাবটাইটেল সহ কাস্টম চ্যানেল বানিয়ে প্লে করবে
-                    val customChannel = Channel(
-                        name = lastName, 
-                        group = "Saved", 
-                        url = lastUrl, 
-                        urls = mutableListOf(lastUrl), 
-                        logo = lastLogo,
-                        subtitleUrl = if (lastSub.isNullOrEmpty()) null else lastSub
-                    )
-                    currentPlayingList = listOf(customChannel)
-                    currentPlayingIndex = 0
+                    // 🔥 মেইন লিস্ট থেকে প্লে (যখন playlist URL ফাঁকা থাকে)
+                    val foundIndex = channels.indexOfFirst { it.url == lastUrl }
+                    if (foundIndex != -1) {
+                        currentPlayingList = channels
+                        currentPlayingIndex = foundIndex
+                    } else {
+                        val customChannel = Channel(lastName, "Saved", lastUrl, mutableListOf(lastUrl), lastLogo, lastSub.ifEmpty { null })
+                        currentPlayingList = listOf(customChannel)
+                        currentPlayingIndex = 0
+                    }
                 }
             } else {
                 val lastIndex = prefs.getInt("last_played_channel_index", -1)
@@ -360,6 +376,7 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
             }
         }
     }
+
     LaunchedEffect(currentTab) { searchQuery = "" }
 
     val toggleFavorite: (String) -> Unit = { url ->
@@ -374,9 +391,11 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
         prefs.edit().putStringSet("favorites", emptySet()).apply()
     }
 
-    val handlePlay: (List<Channel>, Int) -> Unit = { list, index ->
+    // 🔥 এখানে String (playlistUrl) প্যারামিটার যুক্ত করা হয়েছে
+    val handlePlay: (List<Channel>, Int, String) -> Unit = { list, index, playlistUrl ->
         currentPlayingList = list
         currentPlayingIndex = index
+        prefs.edit().putString("last_played_playlist_url", playlistUrl).apply() // 🔥 প্লেলিস্ট URL সেভ করা হলো
 
         if (adConfig.adsEnabled && adConfig.adUrl.isNotEmpty() && adManager.shouldShowAd(adConfig.maxAdsPerDay)) {
             adManager.markAdShown()

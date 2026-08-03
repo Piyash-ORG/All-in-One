@@ -660,8 +660,20 @@ fun MainContentArea(
             }
         }
 
+        // 🔥 গ্রুপ ফিল্টারের জন্য নতুন স্টেট
+        var selectedGroup by remember { mutableStateOf("All") }
+        LaunchedEffect(currentTab) { selectedGroup = "All" } // ট্যাব চেঞ্জ হলে গ্রুপ All হয়ে যাবে
+
         val tabChannels = if (currentTab == Tab.FAVORITES) channels.filter { favoriteUrls.contains(it.url) } else channels
-        val displayChannels = if (searchQuery.isEmpty()) tabChannels else tabChannels.filter { it.name.contains(searchQuery, ignoreCase = true) }
+        val searchChannels = if (searchQuery.isEmpty()) tabChannels else tabChannels.filter { it.name.contains(searchQuery, ignoreCase = true) }
+
+        // 🔥 ডাইনামিক গ্রুপ লিস্ট তৈরি (tvg-group থেকে)
+        val uniqueGroups = remember(searchChannels) {
+            listOf("All") + searchChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
+        }
+
+        // 🔥 সিলেক্টেড গ্রুপের ওপর ভিত্তি করে ফাইনাল চ্যানেল লিস্ট
+        val displayChannels = if (selectedGroup == "All") searchChannels else searchChannels.filter { it.group.equals(selectedGroup, ignoreCase = true) }
 
         if (isLoading) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator(color = AccentYellow) }
@@ -670,9 +682,46 @@ fun MainContentArea(
         } else {
             Spacer(modifier = Modifier.height(8.dp)) 
             
+            // 🔥 ক্যাটাগরি টপ বার (যদি ১ টার বেশি গ্রুপ থাকে)
+            if (uniqueGroups.size > 1 && (currentTab == Tab.CHANNELS || currentTab == Tab.FAVORITES)) {
+                LazyRow(
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    items(uniqueGroups) { groupName ->
+                        val isSelected = selectedGroup == groupName
+                        var isGroupFocused by remember { mutableStateOf(false) }
+                        
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(50))
+                                .background(if (isSelected) AccentYellow else if (isGroupFocused) Color.White.copy(alpha = 0.2f) else CardBg)
+                                .border(2.dp, if (isGroupFocused) Color.White else Color.Transparent, RoundedCornerShape(50))
+                                .onFocusChanged { isGroupFocused = it.isFocused }
+                                .onKeyEvent { event ->
+                                    if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
+                                        if (event.type == KeyEventType.KeyUp) { selectedGroup = groupName; true } else false
+                                    } else false
+                                }
+                                .clickable { selectedGroup = groupName }
+                                .focusable()
+                                .padding(horizontal = 20.dp, vertical = 8.dp)
+                        ) {
+                            Text(
+                                text = groupName,
+                                color = if (isSelected) Color.Black else Color.White,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 14.sp
+                            )
+                        }
+                    }
+                }
+            }
+            
             Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
                 if (currentTab == Tab.CHANNELS) {
-                    val columns = if (isTv) GridCells.Fixed(5) else GridCells.Adaptive(minSize = 150.dp)
+                    val columns = if (isTv) GridCells.Fixed(6) else GridCells.Adaptive(minSize = 120.dp) // গোল কার্ডের জন্য কলাম ৬টি করা হলো
                     LazyVerticalGrid(
                         columns = columns, 
                         state = gridState, 
@@ -683,11 +732,21 @@ fun MainContentArea(
                     ) {
                         itemsIndexed(items = displayChannels, key = { index, channel -> channel.url + index }) { index, channel ->
                             val isLastFocused = channel.url == lastFocusedUrl
-                            ChannelGridCard(
-                                channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
-                                isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
-                            )
+                            // 🔥 tvg-group এ Movie থাকলে থাম্বনেইল, নইলে গোল কার্ড!
+                            val isMovie = channel.group.contains("Movie", ignoreCase = true)
+                            
+                            if (isMovie) {
+                                ChannelThumbCard(
+                                    channel = channel, onPlay = { onPlay(displayChannels, index) },
+                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
+                                )
+                            } else {
+                                ChannelCircleCard( // 🔥 আপনার স্বপ্নের সার্কুলার কার্ড
+                                    channel = channel, isFavorite = favoriteUrls.contains(channel.url),
+                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
+                                )
+                            }
                         }
                     }
                 } else {

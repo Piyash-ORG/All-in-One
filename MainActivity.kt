@@ -721,7 +721,7 @@ fun MainContentArea(
             
             Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
                 if (currentTab == Tab.CHANNELS) {
-                    val columns = if (isTv) GridCells.Fixed(6) else GridCells.Adaptive(minSize = 120.dp) // গোল কার্ডের জন্য কলাম ৬টি করা হলো
+                    val columns = if (isTv) GridCells.Fixed(6) else GridCells.Adaptive(minSize = 120.dp) // গোল কার্ডের জন্য ৬ কলাম
                     LazyVerticalGrid(
                         columns = columns, 
                         state = gridState, 
@@ -732,24 +732,16 @@ fun MainContentArea(
                     ) {
                         itemsIndexed(items = displayChannels, key = { index, channel -> channel.url + index }) { index, channel ->
                             val isLastFocused = channel.url == lastFocusedUrl
-                            // 🔥 tvg-group এ Movie থাকলে থাম্বনেইল, নইলে গোল কার্ড!
-                            val isMovie = channel.group.contains("Movie", ignoreCase = true)
                             
-                            if (isMovie) {
-                                ChannelThumbCard(
-                                    channel = channel, onPlay = { onPlay(displayChannels, index) },
-                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
-                                )
-                            } else {
-                                ChannelCircleCard( // 🔥 আপনার স্বপ্নের সার্কুলার কার্ড
-                                    channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
-                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
-                                )
-                            }
+                            // 🔥 মেইন স্ক্রিনে শুধু গোল কার্ড দেখাবে
+                            ChannelCircleCard( 
+                                channel = channel, isFavorite = favoriteUrls.contains(channel.url),
+                                onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
+                            )
                         }
                     }
-                } else {
+                } else {                            
                     LazyColumn(
                         state = listState, 
                         verticalArrangement = Arrangement.spacedBy(0.dp),

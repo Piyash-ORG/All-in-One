@@ -636,8 +636,6 @@ fun MainContentArea(
                 }
                 return@Column
             }
-                        
-            }
             else -> {}
         }
         

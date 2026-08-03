@@ -554,91 +554,89 @@ fun MainContentArea(
                 return@Column
             }
             Tab.MORE -> {
-                if (isTv) {
-                    val view = LocalView.current
-                    
-                    val interactionSource1 = remember { MutableInteractionSource() }
-                    val isFocused1 by interactionSource1.collectIsFocusedAsState()
-                    var wasFocused1 by remember { mutableStateOf(false) }
+                val view = LocalView.current
+                
+                val interactionSource1 = remember { MutableInteractionSource() }
+                val isFocused1 by interactionSource1.collectIsFocusedAsState()
+                var wasFocused1 by remember { mutableStateOf(false) }
 
-                    val interactionSource2 = remember { MutableInteractionSource() }
-                    val isFocused2 by interactionSource2.collectIsFocusedAsState()
-                    var wasFocused2 by remember { mutableStateOf(false) }
+                val interactionSource2 = remember { MutableInteractionSource() }
+                val isFocused2 by interactionSource2.collectIsFocusedAsState()
+                var wasFocused2 by remember { mutableStateOf(false) }
 
-                    Column(
-                        modifier = Modifier.fillMaxSize().padding(32.dp),
-                        verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.Start
+                Column(
+                    // 🔥 টিভিতে প্যাডিং বেশি থাকবে, মোবাইলে কম
+                    modifier = Modifier.fillMaxSize().padding(if (isTv) 32.dp else 16.dp),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.Start
+                ) {
+                    Text("Settings", color = AccentYellow, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    // 🔥 Auto-Play Switch
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        // 🔥 টিভিতে 60% জায়গা নিবে, মোবাইলে 100% নিবে
+                        modifier = Modifier
+                            .fillMaxWidth(if (isTv) 0.6f else 1f)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (isFocused1) Color.White.copy(alpha = 0.2f) else CardBg)
+                            .border(2.dp, if (isFocused1) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
+                            .onFocusChanged { state ->
+                                if (state.isFocused && !wasFocused1) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                wasFocused1 = state.isFocused
+                            }
+                            .clickable(interactionSource = interactionSource1, indication = null) {
+                                isAutoLaunch = !isAutoLaunch
+                                prefsForSettings.edit().putBoolean("auto_launch_on_boot", isAutoLaunch).apply()
+                            }
+                            .focusable()
+                            .padding(16.dp)
                     ) {
-                        Text("Settings", color = AccentYellow, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.height(24.dp))
-
-                        // 🔥 Auto-Play Switch
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth(0.6f)
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(if (isFocused1) Color.White.copy(alpha = 0.2f) else CardBg)
-                                .border(2.dp, if (isFocused1) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
-                                .onFocusChanged { state ->
-                                    if (state.isFocused && !wasFocused1) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
-                                    wasFocused1 = state.isFocused
-                                }
-                                .clickable(interactionSource = interactionSource1, indication = null) {
-                                    isAutoLaunch = !isAutoLaunch
-                                    prefsForSettings.edit().putBoolean("auto_launch_on_boot", isAutoLaunch).apply()
-                                }
-                                .focusable()
-                                .padding(16.dp)
-                        ) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text("Auto-Play on Launch", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                                Text("Directly play the last channel when app starts", color = Color.Gray, fontSize = 12.sp)
-                            }
-                            Switch(
-                                checked = isAutoLaunch, onCheckedChange = null,
-                                colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
-                            )
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("Auto-Play on Launch", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                            Text("Directly play the last channel when app starts", color = Color.Gray, fontSize = 12.sp)
                         }
-
-                        Spacer(modifier = Modifier.height(16.dp))
-
-                        // 🔥 Premium UI Switch (নতুন)
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth(0.6f)
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(if (isFocused2) Color.White.copy(alpha = 0.2f) else CardBg)
-                                .border(2.dp, if (isFocused2) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
-                                .onFocusChanged { state ->
-                                    if (state.isFocused && !wasFocused2) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
-                                    wasFocused2 = state.isFocused
-                                }
-                                .clickable(interactionSource = interactionSource2, indication = null) {
-                                    isPremiumUiEnabled = !isPremiumUiEnabled
-                                    prefsForSettings.edit().putBoolean("premium_ui_enabled", isPremiumUiEnabled).apply()
-                                }
-                                .focusable()
-                                .padding(16.dp)
-                        ) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text("Premium Channels UI", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                                Text("Enable dynamic categories & circular channel cards", color = Color.Gray, fontSize = 12.sp)
-                            }
-                            Switch(
-                                checked = isPremiumUiEnabled, onCheckedChange = null,
-                                colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
-                            )
-                        }
+                        Switch(
+                            checked = isAutoLaunch, onCheckedChange = null,
+                            colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
+                        )
                     }
-                } else {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Text("MORE Section Coming Soon...", color = Color.Gray)
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // 🔥 Premium UI Switch
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth(if (isTv) 0.6f else 1f)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (isFocused2) Color.White.copy(alpha = 0.2f) else CardBg)
+                            .border(2.dp, if (isFocused2) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
+                            .onFocusChanged { state ->
+                                if (state.isFocused && !wasFocused2) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                wasFocused2 = state.isFocused
+                            }
+                            .clickable(interactionSource = interactionSource2, indication = null) {
+                                isPremiumUiEnabled = !isPremiumUiEnabled
+                                prefsForSettings.edit().putBoolean("premium_ui_enabled", isPremiumUiEnabled).apply()
+                            }
+                            .focusable()
+                            .padding(16.dp)
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("Premium Channels UI", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                            Text("Enable dynamic categories & circular channel cards", color = Color.Gray, fontSize = 12.sp)
+                        }
+                        Switch(
+                            checked = isPremiumUiEnabled, onCheckedChange = null,
+                            colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
+                        )
                     }
                 }
                 return@Column
+            }
+                        
             }
             else -> {}
         }

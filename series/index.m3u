@@ -19,8 +19,6 @@ https://stream.mux.com/pdLlC4zise2dUthnQMfrWSXAjMEHJX1lxQw8tGL6CIg.m3u8
 https://stream.mux.com/yx2bTmw4hqVCB01M4b9acfNzsEZ4yOFB02Ww2xaFBZUHo.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/DxMA7EzVsq008xBOc7Xc0000WaIUgS1jWNqgr55zLgumis/thumbnail.jpg" group-title="Aye Musht E Khaak",S01 E06 • Aye Musht E Khaak • AQ
 https://stream.mux.com/DxMA7EzVsq008xBOc7Xc0000WaIUgS1jWNqgr55zLgumis.m3u8
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_darama_ldz101_Shaidai_Ep_20_-_GeoTV_01k0E37ga.jpg" group-title="Shaidai",S01 E20 • Shaidai • AQ
-https://archive.org/download/darama_ldz101/Shaidai%20Ep%2020%20-%20GeoTV.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_darama_ldz101_Aye_Musht-e-Khaak_-_Episode_11_ot_QDiuA0.jpg" group-title="Aye Musht E Khaak",S01 E11 • Aye Musht E Khaak • AQ
 https://archive.org/download/darama_ldz101/Aye%20Musht-e-Khaak%20-%20Episode%2011.mp4
 #EXTINF:-1 tvg-logo="https://image.mux.com/02ZSUTLvxAxpEQ31TUMPjISSYZKfziYxhvZznvfziDss/thumbnail.jpg" group-title="Aye Musht E Khaak",S01 E05 • Aye Musht E Khaak • AQ
@@ -69,20 +67,12 @@ https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2003.mp4
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2002.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_ldz3_Khumar_-_Episode_01_YtbTtOKPl.jpg" group-title="Khumar",S01 E01 • Khumar • AQ
 https://archive.org/download/drama_ldz3/Khumar%20-%20Episode%2001.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_14_-_Geo_HD_YHdOw2CvW.jpg" group-title="Shaidai",S01 E14 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%2014%20-%20Geo%20HD.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_7_-_ARY_Digital_TFT3wCkW5.jpg" group-title="Ishqiya",S01 E07 • Ishqiya • AQ
 https://archive.org/download/drama_lds/Ishqiya%20Ep%207%20-%20ARY%20Digital.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_6_-_ARY_Digital_f2CyN3IDS.jpg" group-title="Ishqiya",S01 E06 • Ishqiya • AQ
 https://archive.org/download/drama_lds/Ishqiya%20Ep%206%20-%20ARY%20Digital.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_5_-_ARY_Digital_1i7b42nrv.jpg" group-title="Ishqiya",S01 E05 • Ishqiya • AQ
 https://archive.org/download/drama_lds/Ishqiya%20Ep%205%20-%20ARY%20Digital.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_13_-_Geo_TV__VqghQEkN.jpg" group-title="Shaidai",S01 E13 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%2013%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_12_-_Geo_TV_6G67yw5Jx.jpg" group-title="Shaidai",S01 E12 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%2012%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_11_-_Geo_TV_rucHAM_d1.jpg" group-title="Shaidai",S01 E11 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%2011%20-%20Geo%20TV.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_4_-_ARY_Digital_xFzHJzXmc.jpg" group-title="Ishqiya",S01 E04 • Ishqiya • AQ
 https://archive.org/download/drama_lds/Ishqiya%20Ep%204%20-%20ARY%20Digital.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_3_-_ARY_Digital_BWzjHTJhI.jpg" group-title="Ishqiya",S01 E03 • Ishqiya • AQ
@@ -91,26 +81,6 @@ https://archive.org/download/drama_lds/Ishqiya%20Ep%203%20-%20ARY%20Digital.ia.m
 https://archive.org/download/drama_lds/Ishqiya%20Ep%202%20-%20ARY%20Digital.ia.mp4
 #EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Ishqiya_Ep_1_-_ARY_Digital_ruWIGaeYe.jpg" group-title="Ishqiya",S01 E01 • Ishqiya • AQ
 https://archive.org/download/drama_lds/Ishqiya%20Ep%201%20-%20ARY%20Digital.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_10_-_Geo_TV_OuW2s4t8P.jpg" group-title="Shaidai",S01 E10 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%2010%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_9_-_Geo_TV_PTHIGzdhb.jpg" group-title="Shaidai",S01 E09 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%209%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_8_-_Geo_TV_3rk1njfX7.jpg" group-title="Shaidai",S01 E08 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%208%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_7_-_Geo_TV_5Hek_Ct3O.jpg" group-title="Shaidai",S01 E07 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%207%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_6_-_Geo_TV_uCr1Ng_eH.jpg" group-title="Shaidai",S01 E06 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%206%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_5_-_Geo_TV_IT9WxhdK-.jpg" group-title="Shaidai",S01 E05 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%205%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_4_-_Geo_TV_wME2_DD8T.jpg" group-title="Shaidai",S01 E04 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%204%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_3_-_Geo_TV_L-yvntomP.jpg" group-title="Shaidai",S01 E03 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%203%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_2_-_Geo_TV_zm1eJ9EUB.jpg" group-title="Shaidai",S01 E02 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%202%20-%20Geo%20TV.ia.mp4
-#EXTINF:-1 tvg-logo="https://ik.imagekit.io/ottstream/thumb_drama_lds_Shaidai_Ep_1_-_Geo_TV_S2YQ3YNjX.jpg" group-title="Shaidai",S01 E01 • Shaidai • AQ
-https://archive.org/download/drama_lds/Shaidai%20Ep%201%20-%20Geo%20TV.ia.mp4
 #EXTINF:-1 tvg-logo="https://image.mux.com/nDA500qRBK01IhS02CXNuPFndyBnecP01p6FPvvTCVKq4mw/thumbnail.jpg" group-title="Perfect Crown",S01 E12 • Perfect Crown • AQ
 https://stream.mux.com/nDA500qRBK01IhS02CXNuPFndyBnecP01p6FPvvTCVKq4mw.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/xhx1GmAVc3GxDUVDTiSjzRhrTu2CIgnKLOLSX9yVr5Q/thumbnail.jpg" group-title="Perfect Crown",S01 E11 • Perfect Crown • AQ
@@ -131,16 +101,6 @@ https://stream.mux.com/EiCBhgX9DTk8eDB2wf9Tb3TSsfsA4J1YW1b9nkObIt00.m3u8
 https://stream.mux.com/pyJ01dNuBZhQvE004GxPZKH3inYoHB2s1EulUEVGCL300M.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/7XgpEX3FMMMJBJ02NyaGOvO9qjExbmyjoo00aXsZq8YZQ/thumbnail.jpg" group-title="Perfect Crown",S01 E03 • Perfect Crown • AQ
 https://stream.mux.com/7XgpEX3FMMMJBJ02NyaGOvO9qjExbmyjoo00aXsZq8YZQ.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/v6GTg5Dy/UOITDEUGJDRQIRG.jpg" group-title="Shaidai",S01 E19 • Shaidai • AQ
-https://vjgnbjkgo97y-hls-push.5centscdn.com/mp4/raw/119/120/4-79ebc923-0e5d-4267-af14-79f644f8a974_combined.smil/index-v1-a1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/PvpwHcqr/LPHTKOXDKEJKQAQ.jpg" group-title="Shaidai",S01 E18 • Shaidai • AQ
-https://vjgnbjkgo97y-hls-push.5centscdn.com/mp4/raw/119/120/4-2ca91555-07a7-4e20-8a4d-346fc52682e5_combined.smil/index-v1-a1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/r2tfm7hd/VPZKDNRBXTQEFDS.jpg" group-title="Shaidai",S01 E17 • Shaidai • AQ
-https://vjgnbjkgo97y-hls-push.5centscdn.com/mp4/raw/119/120/4-9d1fe9a8-4cd2-4c4e-8662-65afc4324f18_combined.smil/index-v1-a1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/v6X6qPZ1/KUONLBAZSNQDZOM.jpg" group-title="Shaidai",S01 E16 • Shaidai • AQ
-https://vjgnbjkgo97y-hls-push.5centscdn.com/mp4/raw/119/120/4-e845bb52-5cba-4d7e-bf5f-5c5cbf64e4eb_combined.smil/index-v1-a1.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/nMcWBcjr/NNNSXSETVBWPHKX.jpg" group-title="Shaidai",S01 E15 • Shaidai • AQ
-https://vjgnbjkgo97y-hls-push.5centscdn.com/mp4/raw/119/120/4-673d55dd-ffd7-49f8-a437-b5fb19c3e555_combined.smil/index-v1-a1.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/ymctCysQe7p5ZBc3cBoyexQRXTIGA004RRqLW9ypkCIA/thumbnail.jpg" group-title="Perfect Crown",S01 E02 • Perfect Crown • AQ
 https://stream.mux.com/ymctCysQe7p5ZBc3cBoyexQRXTIGA004RRqLW9ypkCIA.m3u8
 #EXTINF:-1 tvg-logo="https://image.mux.com/bq7bMlaCmorhDBeOpNN6NzaBtcUipPnuMREMAPBf1Vs/thumbnail.jpg" group-title="Perfect Crown",S01 E01 • Perfect Crown • AQ

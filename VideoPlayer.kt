@@ -310,7 +310,7 @@ fun ExoPlayerView(
     }
 
     LaunchedEffect(currentIndex) {
-        // 🔥 বুট অন লঞ্চের জন্য লাস্ট চ্যানেল সেভ রাখা হচ্ছে (URL, Name, Logo সহ)
+        // 🔥 বুট অন লঞ্চের জন্য লাস্ট চ্যানেল সেভ রাখা হচ্ছে (সাবটাইটেল সহ)
         val currentChannel = playlist.getOrNull(currentIndex)
         if (currentChannel != null) {
             prefs.edit()
@@ -318,6 +318,7 @@ fun ExoPlayerView(
                 .putString("last_played_channel_url", currentChannel.url)
                 .putString("last_played_channel_name", currentChannel.name)
                 .putString("last_played_channel_logo", currentChannel.logo)
+                .putString("last_played_channel_sub", currentChannel.subtitleUrl ?: "") // 🔥 সাবটাইটেল লিংক সেভ করা হলো
                 .apply()
         }
         

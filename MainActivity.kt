@@ -435,7 +435,7 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
 @Composable
 fun MobileBottomNav(currentTab: Tab, onTabSelected: (Tab) -> Unit) {
     NavigationBar(containerColor = Color(0xFF13111C), contentColor = Color.Gray) {
-        val tabs = Tab.values()
+        val tabs = Tab.entries
         tabs.forEach { tab ->
             val icon = when(tab) {
                 Tab.MATCHES -> Icons.Default.EmojiEvents 
@@ -459,7 +459,7 @@ fun MobileBottomNav(currentTab: Tab, onTabSelected: (Tab) -> Unit) {
 fun TvSideNav(currentTab: Tab, onTabSelected: (Tab) -> Unit) {
     NavigationRail(containerColor = Color(0xFF13111C), modifier = Modifier.fillMaxHeight().width(80.dp)) {
         Spacer(modifier = Modifier.height(24.dp))
-        val tabs = Tab.values()
+        val tabs = Tab.entries
         tabs.forEach { tab ->
             val icon = when(tab) {
                 Tab.MATCHES -> Icons.Default.EmojiEvents

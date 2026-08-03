@@ -440,12 +440,12 @@ fun ExoPlayerView(
                 }
 
                 if (state == Player.STATE_BUFFERING) {
-                    // বাফারিং শুরু হলেই ৬ সেকেন্ডের টাইমার চালু হবে
+                    // বাফারিং শুরু হলেই 10 সেকেন্ডের টাইমার চালু হবে
                     bufferingJob?.cancel()
                     bufferingJob = coroutineScope.launch {
-                        delay(6000L) // ৬ সেকেন্ড অপেক্ষা
+                        delay(10000L) // 10 সেকেন্ড অপেক্ষা
                         if (isActive && playbackState == Player.STATE_BUFFERING) {
-                            // ৬ সেকেন্ড পার হয়ে গেছে, এখনো বাফারিং! এবার নেক্সট চ্যানেলে যাও
+                            // 10 সেকেন্ড পার হয়ে গেছে, এখনো বাফারিং! এবার নেক্সট চ্যানেলে যাও
                             showToast("Channel timeout! Skipping to next channel...")
                             currentServerIndex = 0 
                             currentIndex = if (currentIndex < playlist.size - 1) currentIndex + 1 else 0

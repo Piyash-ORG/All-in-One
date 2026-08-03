@@ -884,6 +884,118 @@ fun CategoriesScreen(
                 }
             } else {
                 Spacer(modifier = Modifier.height(8.dp))
+                
+                // 🔥 ক্যাটাগরির ভেতরের সাব-গ্রুপ লজিক (tvg-group দিয়ে)
+                var selectedCatGroup by remember { mutableStateOf("All") }
+                val catGroups = remember(categoryChannels) {
+                    listOf("All") + categoryChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
+                }
+                val displayCatChannels = if (selectedCatGroup == "All") categoryChannels else categoryChannels.filter { it.group.equals(selectedCatGroup, ignoreCase = true) }
+
+                // 🔥 সাব-গ্রুপ টপ বার (যদি ১ টার বেশি গ্রুপ থাকে)
+                if (catGroups.size > 1) {
+                    LazyRow(
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        items(catGroups) { groupName ->
+                            val isSelected = selectedCatGroup == groupName
+                            var isGroupFocused by remember { mutableStateOf(false) }
+                            
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(50))
+                                    .background(if (isSelected) AccentYellow else if (isGroupFocused) Color.White.copy(alpha = 0.2f) else CardBg)
+                                    .border(2.dp, if (isGroupFocused) Color.White else Color.Transparent, RoundedCornerShape(50))
+                                    .onFocusChanged { isGroupFocused = it.isFocused }
+                                    .onKeyEvent { event ->
+                                        if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
+                                            if (event.type == KeyEventType.KeyUp) { selectedCatGroup = groupName; true } else false
+                                        } else false
+                                    }
+                                    .clickable { selectedCatGroup = groupName }
+                                    .focusable()
+                                    .padding(horizontal = 16.dp, vertical = 8.dp)
+                            ) {
+                                Text(text = groupName, color = if (isSelected) Color.Black else Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                            }
+                        }
+                    }
+                }
+
+                Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
+                    // 🔥 JSON এর categories.json থেকে "types" চেক করা হচ্ছে
+                    val isThumb = selectedCategory!!.types == "thumb"
+                    
+                    val columns = if (isTv) {
+                        GridCells.Fixed(if (isThumb) 4 else 6) 
+                    } else {
+                        if (isThumb) GridCells.Fixed(2) else GridCells.Adaptive(minSize = 120.dp)
+                    }
+                    
+                    LazyVerticalGrid(
+                        columns = columns,
+                        state = channelGridState,
+                        horizontalArrangement = Arrangement.spacedBy(0.dp),
+                        verticalArrangement = Arrangement.spacedBy(0.dp),
+                        contentPadding = PaddingValues(top = 0.dp, bottom = 100.dp),
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        itemsIndexed(items = displayCatChannels, key = { index, channel -> channel.url + index }) { index, channel ->
+                            val isLastFocusedChannel = channel.url == lastFocusedUrl
+                            
+                            // 🔥 শুধুমাত্র JSON এর types="thumb" হলেই থাম্বনেইল দেখাবে!
+                            if (isThumb) {
+                                ChannelThumbCard(
+                                    channel = channel,
+                                    onPlay = { onPlay(displayCatChannels, index) },
+                                    isLastFocused = isLastFocusedChannel,
+                                    focusRequester = focusRequester,
+                                    onFocus = { onItemFocused(channel.url) }
+                                )
+                            } else {
+                                ChannelCircleCard( 
+                                    channel = channel,
+                                    isFavorite = favoriteUrls.contains(channel.url),
+                                    onPlay = { onPlay(displayCatChannels, index) },
+                                    onToggleFav = { onToggleFav(channel.url) },
+                                    isLastFocused = isLastFocusedChannel,
+                                    focusRequester = focusRequester,
+                                    onFocus = { onItemFocused(channel.url) }
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+    } else {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = selectedCategory!!.name,
+                    color = Color.White,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.ExtraBold
+                )
+            }
+
+            if (isChannelsLoading) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator(color = AccentYellow, strokeWidth = 4.dp, modifier = Modifier.size(56.dp))
+                }
+            } else if (categoryChannels.isEmpty()) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text("No channels found in this category.", color = Color.Gray)
+                }
+            } else {
+                Spacer(modifier = Modifier.height(8.dp))
                 Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
                     val isThumb = selectedCategory!!.types == "thumb"
                     val columns = if (isTv) {

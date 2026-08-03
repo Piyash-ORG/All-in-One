@@ -541,14 +541,14 @@ fun navigationBarColors() = NavigationBarItemDefaults.colors(
 fun MainContentArea(
     isLoading: Boolean, currentTab: Tab, channels: List<Channel>, favoriteUrls: Set<String>,
     searchQuery: String, onSearchQueryChange: (String) -> Unit,
-    onPlay: (List<Channel>, Int) -> Unit, onToggleFav: (String) -> Unit, onClearAllFavs: () -> Unit,
+    onPlay: (List<Channel>, Int, String) -> Unit, // 🔥 প্যারামিটার আপডেট
+    onToggleFav: (String) -> Unit, onClearAllFavs: () -> Unit,
     onRefresh: () -> Unit, gridState: LazyGridState, listState: LazyListState,
     lastFocusedUrl: String?, onItemFocused: (String) -> Unit, focusRestoreTrigger: Boolean,
     onFocusRestored: () -> Unit, isTv: Boolean, modifier: Modifier = Modifier
 ) {
     val focusRequester = remember { FocusRequester() }
     
-    // 🔥 সেটিংসের ডেটাগুলো সবার ওপরে আনা হলো (যাতে সব ট্যাবে কাজ করে)
     val contextForPrefs = LocalContext.current
     val prefsForSettings = remember { contextForPrefs.getSharedPreferences("NexaPlayPrefs", Context.MODE_PRIVATE) }
     var isAutoLaunch by remember { mutableStateOf(prefsForSettings.getBoolean("auto_launch_on_boot", false)) }
@@ -583,13 +583,13 @@ fun MainContentArea(
 
         when (currentTab) {
             Tab.MATCHES -> {
-                MatchesScreen(isTv = isTv, onPlayMatch = onPlay)
+                MatchesScreen(isTv = isTv, onPlayMatch = { list, index -> onPlay(list, index, "") }) // 🔥
                 return@Column
             }
             Tab.CATEGORIES -> {
                 CategoriesScreen(
                     isTv = isTv, 
-                    onPlay = onPlay, 
+                    onPlay = onPlay, // 🔥
                     favoriteUrls = favoriteUrls, 
                     onToggleFav = onToggleFav,
                     lastFocusedUrl = lastFocusedUrl,
@@ -610,7 +610,6 @@ fun MainContentArea(
                 var wasFocused2 by remember { mutableStateOf(false) }
 
                 Column(
-                    // 🔥 টিভিতে প্যাডিং বেশি থাকবে, মোবাইলে কম
                     modifier = Modifier.fillMaxSize().padding(if (isTv) 32.dp else 16.dp),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start
@@ -618,10 +617,8 @@ fun MainContentArea(
                     Text("Settings", color = AccentYellow, fontSize = 24.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // 🔥 Auto-Play Switch
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        // 🔥 টিভিতে 60% জায়গা নিবে, মোবাইলে 100% নিবে
                         modifier = Modifier
                             .fillMaxWidth(if (isTv) 0.6f else 1f)
                             .clip(RoundedCornerShape(8.dp))
@@ -650,7 +647,6 @@ fun MainContentArea(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // 🔥 Premium UI Switch
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier
@@ -741,7 +737,6 @@ fun MainContentArea(
             }
         }
 
-        // 🔥 গ্রুপ ফিল্টারের স্টেট 
         var selectedGroup by remember { mutableStateOf("All") }
         LaunchedEffect(currentTab) { selectedGroup = "All" } 
 
@@ -752,7 +747,6 @@ fun MainContentArea(
             listOf("All") + searchChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
         }
 
-        // 🔥 যদি Premium UI অন থাকে, তবে গ্রুপ অনুযায়ী ফিল্টার হবে, নাহলে সব চ্যানেল দেখাবে।
         val displayChannels = if (isPremiumUiEnabled && selectedGroup != "All") {
             searchChannels.filter { it.group.equals(selectedGroup, ignoreCase = true) }
         } else {
@@ -766,7 +760,6 @@ fun MainContentArea(
         } else {
             Spacer(modifier = Modifier.height(8.dp)) 
             
-            // 🔥 ক্যাটাগরি টপ বার (শুধুমাত্র Premium UI অন থাকলে দেখাবে)
             if (isPremiumUiEnabled && uniqueGroups.size > 1 && (currentTab == Tab.CHANNELS || currentTab == Tab.FAVORITES)) {
                 val view = LocalView.current
                 
@@ -807,7 +800,6 @@ fun MainContentArea(
             
             Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
                 if (currentTab == Tab.CHANNELS) {
-                    // 🔥 Premium UI অন থাকলে ৬ কলাম (গোল কার্ড), নইলে আগের ৫ কলাম (স্কয়ার কার্ড)
                     val columns = if (isTv) {
                         GridCells.Fixed(if (isPremiumUiEnabled) 6 else 5)
                     } else {
@@ -825,17 +817,18 @@ fun MainContentArea(
                         itemsIndexed(items = displayChannels, key = { index, channel -> channel.url + index }) { index, channel ->
                             val isLastFocused = channel.url == lastFocusedUrl
                             
-                            // 🔥 সুইচের উপর ভিত্তি করে কার্ডের ডিজাইন পরিবর্তন হবে
                             if (isPremiumUiEnabled) {
                                 ChannelCircleCard( 
                                     channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                    onPlay = { onPlay(displayChannels, index, "") }, // 🔥
+                                    onToggleFav = { onToggleFav(channel.url) },
                                     isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
                                 )
                             } else {
-                                ChannelGridCard( // আপনার পুরনো স্কয়ার কার্ড 
+                                ChannelGridCard( 
                                     channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                    onPlay = { onPlay(displayChannels, index, "") }, // 🔥
+                                    onToggleFav = { onToggleFav(channel.url) },
                                     isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
                                 )
                             }
@@ -852,7 +845,8 @@ fun MainContentArea(
                             val isLastFocused = channel.url == lastFocusedUrl
                             ChannelListCard(
                                 channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                onPlay = { onPlay(displayChannels, index, "") }, // 🔥
+                                onToggleFav = { onToggleFav(channel.url) },
                                 isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
                             )
                         }

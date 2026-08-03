@@ -643,7 +643,26 @@ fun ExoPlayerView(
                             modifier = Modifier
                                 .focusRequester(subtitleFocusRequester)
                                 .onFocusChanged { isSwitchFocused = it.isFocused }
-                                .border(if (isSwitchFocused) 2.dp else 0.dp, if (isSwitchFocused) Color.White else Color.Transparent, CircleShape),
+                                .border(if (isSwitchFocused) 2.dp else 0.dp, if (isSwitchFocused) Color.White else Color.Transparent, CircleShape)
+                                // 🔥 টিভির রিমোটের OK বাটনের জন্য এক্সট্রা সাপোর্ট
+                                .onKeyEvent { event ->
+                                    if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
+                                        if (event.type == KeyEventType.KeyUp) {
+                                            isSubtitleEnabled = !isSubtitleEnabled
+                                            prefs.edit().putBoolean("saved_subtitle_enabled", isSubtitleEnabled).apply()
+                                            
+                                            val paramsBuilder = trackSelector.buildUponParameters()
+                                            if (!isSubtitleEnabled) {
+                                                paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
+                                            } else {
+                                                paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+                                                paramsBuilder.setPreferredTextLanguage("bn")
+                                            }
+                                            trackSelector.parameters = paramsBuilder.build()
+                                            true
+                                        } else false
+                                    } else false
+                                },
                             colors = SwitchDefaults.colors(
                                 checkedThumbColor = Color.Black, 
                                 checkedTrackColor = Color.Yellow,
@@ -651,7 +670,6 @@ fun ExoPlayerView(
                                 uncheckedTrackColor = Color.DarkGray
                             )
                         )
-                    }
                     
                     Text("Subtitle Size: ${(subtitleSize * 1000).toInt()}", color = Color.Yellow)
                     Row(horizontalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.padding(vertical = 8.dp)) {

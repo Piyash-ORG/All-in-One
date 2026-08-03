@@ -670,7 +670,7 @@ fun ExoPlayerView(
                                 uncheckedTrackColor = Color.DarkGray
                             )
                         )
-                    
+                    }
                     Text("Subtitle Size: ${(subtitleSize * 1000).toInt()}", color = Color.Yellow)
                     Row(horizontalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.padding(vertical = 8.dp)) {
                         var isLargerFocused by remember { mutableStateOf(false) }

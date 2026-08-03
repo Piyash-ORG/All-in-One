@@ -322,17 +322,16 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
             isLoading = false
         }
     }
-
-
     // 🔥 আল্ট্রা-স্মার্ট অটো-প্লে লজিক: সাবটাইটেল সহ টেম্পোরারি চ্যানেল বানিয়ে প্লে করবে
     LaunchedEffect(channels) {
         if (shouldAutoPlay && channels.isNotEmpty() && currentPlayingIndex == null) {
-            val lastUrl = prefs.getString("last_played_channel_url", "")
-            val lastName = prefs.getString("last_played_channel_name", "Saved Channel")
-            val lastLogo = prefs.getString("last_played_channel_logo", "")
-            val lastSub = prefs.getString("last_played_channel_sub", "") // 🔥 সেভ করা সাবটাইটেল রিড করা হলো
+            // 🔥 এখানে ?: "" ব্যবহার করা হয়েছে যাতে এগুলো কখনোই null না হয়
+            val lastUrl = prefs.getString("last_played_channel_url", "") ?: ""
+            val lastName = prefs.getString("last_played_channel_name", "Saved Channel") ?: "Saved Channel"
+            val lastLogo = prefs.getString("last_played_channel_logo", "") ?: ""
+            val lastSub = prefs.getString("last_played_channel_sub", "")
 
-            if (!lastUrl.isNullOrEmpty()) {
+            if (lastUrl.isNotEmpty()) {
                 val foundIndex = channels.indexOfFirst { it.url == lastUrl }
                 if (foundIndex != -1) {
                     // চ্যানেলটি মেইন লিস্টে থাকলে সেখান থেকেই প্লে করবে
@@ -347,7 +346,7 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
                         url = lastUrl, 
                         urls = mutableListOf(lastUrl), 
                         logo = lastLogo,
-                        subtitleUrl = if (lastSub.isNullOrEmpty()) null else lastSub // 🔥 সাবটাইটেল পাস করা হলো
+                        subtitleUrl = if (lastSub.isNullOrEmpty()) null else lastSub
                     )
                     currentPlayingList = listOf(customChannel)
                     currentPlayingIndex = 0

@@ -502,6 +502,12 @@ fun MainContentArea(
     onFocusRestored: () -> Unit, isTv: Boolean, modifier: Modifier = Modifier
 ) {
     val focusRequester = remember { FocusRequester() }
+    
+    // 🔥 সেটিংসের ডেটাগুলো সবার ওপরে আনা হলো (যাতে সব ট্যাবে কাজ করে)
+    val contextForPrefs = LocalContext.current
+    val prefsForSettings = remember { contextForPrefs.getSharedPreferences("NexaPlayPrefs", Context.MODE_PRIVATE) }
+    var isAutoLaunch by remember { mutableStateOf(prefsForSettings.getBoolean("auto_launch_on_boot", false)) }
+    var isPremiumUiEnabled by remember { mutableStateOf(prefsForSettings.getBoolean("premium_ui_enabled", false)) }
 
     LaunchedEffect(focusRestoreTrigger) {
         if (focusRestoreTrigger) {
@@ -548,13 +554,16 @@ fun MainContentArea(
                 return@Column
             }
             Tab.MORE -> {
-                val contextForPrefs = LocalContext.current
-                val prefsForSettings = contextForPrefs.getSharedPreferences("NexaPlayPrefs", Context.MODE_PRIVATE)
-
                 if (isTv) {
-                    var isAutoLaunch by remember { mutableStateOf(prefsForSettings.getBoolean("auto_launch_on_boot", false)) }
-                    val interactionSource = remember { MutableInteractionSource() }
-                    val isFocused by interactionSource.collectIsFocusedAsState()
+                    val view = LocalView.current
+                    
+                    val interactionSource1 = remember { MutableInteractionSource() }
+                    val isFocused1 by interactionSource1.collectIsFocusedAsState()
+                    var wasFocused1 by remember { mutableStateOf(false) }
+
+                    val interactionSource2 = remember { MutableInteractionSource() }
+                    val isFocused2 by interactionSource2.collectIsFocusedAsState()
+                    var wasFocused2 by remember { mutableStateOf(false) }
 
                     Column(
                         modifier = Modifier.fillMaxSize().padding(32.dp),
@@ -564,14 +573,19 @@ fun MainContentArea(
                         Text("Settings", color = AccentYellow, fontSize = 24.sp, fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.height(24.dp))
 
+                        // 🔥 Auto-Play Switch
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier
-                                .fillMaxWidth(0.5f)
+                                .fillMaxWidth(0.6f)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(if (isFocused) Color.White.copy(alpha = 0.2f) else CardBg)
-                                .border(2.dp, if (isFocused) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
-                                .clickable(interactionSource = interactionSource, indication = null) {
+                                .background(if (isFocused1) Color.White.copy(alpha = 0.2f) else CardBg)
+                                .border(2.dp, if (isFocused1) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
+                                .onFocusChanged { state ->
+                                    if (state.isFocused && !wasFocused1) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                    wasFocused1 = state.isFocused
+                                }
+                                .clickable(interactionSource = interactionSource1, indication = null) {
                                     isAutoLaunch = !isAutoLaunch
                                     prefsForSettings.edit().putBoolean("auto_launch_on_boot", isAutoLaunch).apply()
                                 }
@@ -579,17 +593,43 @@ fun MainContentArea(
                                 .padding(16.dp)
                         ) {
                             Column(modifier = Modifier.weight(1f)) {
-                                // 🔥 টেক্সট পরিবর্তন করা হয়েছে যাতে ইউজার আসল কাজ বুঝতে পারে
                                 Text("Auto-Play on Launch", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                                 Text("Directly play the last channel when app starts", color = Color.Gray, fontSize = 12.sp)
                             }
                             Switch(
-                                checked = isAutoLaunch,
-                                onCheckedChange = null,
-                                colors = SwitchDefaults.colors(
-                                    checkedThumbColor = AccentYellow,
-                                    checkedTrackColor = AccentYellow.copy(alpha = 0.5f)
-                                )
+                                checked = isAutoLaunch, onCheckedChange = null,
+                                colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        // 🔥 Premium UI Switch (নতুন)
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .fillMaxWidth(0.6f)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(if (isFocused2) Color.White.copy(alpha = 0.2f) else CardBg)
+                                .border(2.dp, if (isFocused2) AccentYellow else Color.Transparent, RoundedCornerShape(8.dp))
+                                .onFocusChanged { state ->
+                                    if (state.isFocused && !wasFocused2) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                    wasFocused2 = state.isFocused
+                                }
+                                .clickable(interactionSource = interactionSource2, indication = null) {
+                                    isPremiumUiEnabled = !isPremiumUiEnabled
+                                    prefsForSettings.edit().putBoolean("premium_ui_enabled", isPremiumUiEnabled).apply()
+                                }
+                                .focusable()
+                                .padding(16.dp)
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text("Premium Channels UI", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                                Text("Enable dynamic categories & circular channel cards", color = Color.Gray, fontSize = 12.sp)
+                            }
+                            Switch(
+                                checked = isPremiumUiEnabled, onCheckedChange = null,
+                                colors = SwitchDefaults.colors(checkedThumbColor = AccentYellow, checkedTrackColor = AccentYellow.copy(alpha = 0.5f))
                             )
                         }
                     }
@@ -660,20 +700,23 @@ fun MainContentArea(
             }
         }
 
-        // 🔥 গ্রুপ ফিল্টারের জন্য নতুন স্টেট
+        // 🔥 গ্রুপ ফিল্টারের স্টেট 
         var selectedGroup by remember { mutableStateOf("All") }
-        LaunchedEffect(currentTab) { selectedGroup = "All" } // ট্যাব চেঞ্জ হলে গ্রুপ All হয়ে যাবে
+        LaunchedEffect(currentTab) { selectedGroup = "All" } 
 
         val tabChannels = if (currentTab == Tab.FAVORITES) channels.filter { favoriteUrls.contains(it.url) } else channels
         val searchChannels = if (searchQuery.isEmpty()) tabChannels else tabChannels.filter { it.name.contains(searchQuery, ignoreCase = true) }
 
-        // 🔥 ডাইনামিক গ্রুপ লিস্ট তৈরি (tvg-group থেকে)
         val uniqueGroups = remember(searchChannels) {
             listOf("All") + searchChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
         }
 
-        // 🔥 সিলেক্টেড গ্রুপের ওপর ভিত্তি করে ফাইনাল চ্যানেল লিস্ট
-        val displayChannels = if (selectedGroup == "All") searchChannels else searchChannels.filter { it.group.equals(selectedGroup, ignoreCase = true) }
+        // 🔥 যদি Premium UI অন থাকে, তবে গ্রুপ অনুযায়ী ফিল্টার হবে, নাহলে সব চ্যানেল দেখাবে।
+        val displayChannels = if (isPremiumUiEnabled && selectedGroup != "All") {
+            searchChannels.filter { it.group.equals(selectedGroup, ignoreCase = true) }
+        } else {
+            searchChannels
+        }
 
         if (isLoading) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator(color = AccentYellow) }
@@ -682,8 +725,10 @@ fun MainContentArea(
         } else {
             Spacer(modifier = Modifier.height(8.dp)) 
             
-            // 🔥 ক্যাটাগরি টপ বার (যদি ১ টার বেশি গ্রুপ থাকে)
-            if (uniqueGroups.size > 1 && (currentTab == Tab.CHANNELS || currentTab == Tab.FAVORITES)) {
+            // 🔥 ক্যাটাগরি টপ বার (শুধুমাত্র Premium UI অন থাকলে দেখাবে)
+            if (isPremiumUiEnabled && uniqueGroups.size > 1 && (currentTab == Tab.CHANNELS || currentTab == Tab.FAVORITES)) {
+                val view = LocalView.current
+                
                 LazyRow(
                     modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -692,13 +737,18 @@ fun MainContentArea(
                     items(uniqueGroups) { groupName ->
                         val isSelected = selectedGroup == groupName
                         var isGroupFocused by remember { mutableStateOf(false) }
+                        var wasFocused by remember { mutableStateOf(false) }
                         
                         Box(
                             modifier = Modifier
                                 .clip(RoundedCornerShape(50))
                                 .background(if (isSelected) AccentYellow else if (isGroupFocused) Color.White.copy(alpha = 0.2f) else CardBg)
                                 .border(2.dp, if (isGroupFocused) Color.White else Color.Transparent, RoundedCornerShape(50))
-                                .onFocusChanged { isGroupFocused = it.isFocused }
+                                .onFocusChanged { state -> 
+                                    isGroupFocused = state.isFocused 
+                                    if (state.isFocused && !wasFocused) view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                                    wasFocused = state.isFocused
+                                }
                                 .onKeyEvent { event ->
                                     if (event.key == Key.DirectionCenter || event.key == Key.Enter || event.key == Key.NumPadEnter) {
                                         if (event.type == KeyEventType.KeyUp) { selectedGroup = groupName; true } else false
@@ -708,12 +758,7 @@ fun MainContentArea(
                                 .focusable()
                                 .padding(horizontal = 20.dp, vertical = 8.dp)
                         ) {
-                            Text(
-                                text = groupName,
-                                color = if (isSelected) Color.Black else Color.White,
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 14.sp
-                            )
+                            Text(text = groupName, color = if (isSelected) Color.Black else Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
                         }
                     }
                 }
@@ -721,7 +766,13 @@ fun MainContentArea(
             
             Box(modifier = Modifier.fillMaxSize().clipToBounds()) {
                 if (currentTab == Tab.CHANNELS) {
-                    val columns = if (isTv) GridCells.Fixed(6) else GridCells.Adaptive(minSize = 120.dp) // গোল কার্ডের জন্য ৬ কলাম
+                    // 🔥 Premium UI অন থাকলে ৬ কলাম (গোল কার্ড), নইলে আগের ৫ কলাম (স্কয়ার কার্ড)
+                    val columns = if (isTv) {
+                        GridCells.Fixed(if (isPremiumUiEnabled) 6 else 5)
+                    } else {
+                        GridCells.Adaptive(minSize = if (isPremiumUiEnabled) 120.dp else 150.dp)
+                    }
+
                     LazyVerticalGrid(
                         columns = columns, 
                         state = gridState, 
@@ -733,12 +784,20 @@ fun MainContentArea(
                         itemsIndexed(items = displayChannels, key = { index, channel -> channel.url + index }) { index, channel ->
                             val isLastFocused = channel.url == lastFocusedUrl
                             
-                            // 🔥 মেইন স্ক্রিনে শুধু গোল কার্ড দেখাবে
-                            ChannelCircleCard( 
-                                channel = channel, isFavorite = favoriteUrls.contains(channel.url),
-                                onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
-                                isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
-                            )
+                            // 🔥 সুইচের উপর ভিত্তি করে কার্ডের ডিজাইন পরিবর্তন হবে
+                            if (isPremiumUiEnabled) {
+                                ChannelCircleCard( 
+                                    channel = channel, isFavorite = favoriteUrls.contains(channel.url),
+                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
+                                )
+                            } else {
+                                ChannelGridCard( // আপনার পুরনো স্কয়ার কার্ড 
+                                    channel = channel, isFavorite = favoriteUrls.contains(channel.url),
+                                    onPlay = { onPlay(displayChannels, index) }, onToggleFav = { onToggleFav(channel.url) },
+                                    isLastFocused = isLastFocused, focusRequester = focusRequester, onFocus = { onItemFocused(channel.url) }
+                                )
+                            }
                         }
                     }
                 } else {                            

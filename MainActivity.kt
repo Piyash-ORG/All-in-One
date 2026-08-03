@@ -1152,6 +1152,10 @@ fun MatchesScreen(isTv: Boolean, onPlayMatch: (List<Channel>, Int) -> Unit) {
 fun MatchClassicCard(match: Match, onClick: () -> Unit) {
     val interactionSource = remember { MutableInteractionSource() }
     val isFocused by interactionSource.collectIsFocusedAsState()
+    
+    val view = LocalView.current // 🔥 সাউন্ডের জন্য View
+    var wasFocused by remember { mutableStateOf(false) } // 🔥 সাউন্ড ট্র্যাক করার জন্য ভেরিয়েবল
+    
     val scale by animateFloatAsState(targetValue = if (isFocused) 1.05f else 1f, label = "scale")
     
     var statusText by remember { mutableStateOf("") }
@@ -1187,6 +1191,12 @@ fun MatchClassicCard(match: Match, onClick: () -> Unit) {
             .fillMaxWidth()
             .scale(scale)
             .border(width = if (isFocused) 2.dp else 0.dp, color = if (isFocused) AccentYellow else Color.Transparent, shape = RoundedCornerShape(16.dp))
+            .onFocusChanged { state -> // 🔥 ফোকাস সাউন্ড লজিক
+                if (state.isFocused && !wasFocused) {
+                    view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
+                }
+                wasFocused = state.isFocused
+            }
             .clickable(interactionSource = interactionSource, indication = null, onClick = onClick)
             .focusable(),
         shape = RoundedCornerShape(16.dp),

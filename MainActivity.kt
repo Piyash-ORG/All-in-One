@@ -860,7 +860,7 @@ fun MainContentArea(
 @Composable
 fun CategoriesScreen(
     isTv: Boolean, 
-    onPlay: (List<Channel>, Int) -> Unit, 
+    onPlay: (List<Channel>, Int, String) -> Unit, // 🔥 প্যারামিটার আপডেট
     favoriteUrls: Set<String>, 
     onToggleFav: (String) -> Unit,
     lastFocusedUrl: String?,
@@ -979,16 +979,14 @@ fun CategoriesScreen(
             } else {
                 Spacer(modifier = Modifier.height(8.dp))
                 
-                // 🔥 ক্যাটাগরির ভেতরের সাব-গ্রুপ লজিক
                 var selectedCatGroup by remember { mutableStateOf("All") }
                 val catGroups = remember(categoryChannels) {
                     listOf("All") + categoryChannels.map { it.group }.filter { it.isNotBlank() && it.uppercase() != "UNCATEGORIZED" }.distinct().sorted()
                 }
                 val displayCatChannels = if (selectedCatGroup == "All") categoryChannels else categoryChannels.filter { it.group.equals(selectedCatGroup, ignoreCase = true) }
 
-                // 🔥 সাব-গ্রুপ টপ বার (সাউন্ড সহ)
                 if (catGroups.size > 1) {
-                    val view = LocalView.current // 🔥 সাউন্ডের জন্য View নেওয়া হলো
+                    val view = LocalView.current 
                     
                     LazyRow(
                         modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
@@ -998,7 +996,7 @@ fun CategoriesScreen(
                         items(catGroups) { groupName ->
                             val isSelected = selectedCatGroup == groupName
                             var isGroupFocused by remember { mutableStateOf(false) }
-                            var wasFocused by remember { mutableStateOf(false) } // 🔥 সাউন্ড ট্র্যাক করার জন্য
+                            var wasFocused by remember { mutableStateOf(false) } 
                             
                             Box(
                                 modifier = Modifier
@@ -1007,7 +1005,6 @@ fun CategoriesScreen(
                                     .border(2.dp, if (isGroupFocused) Color.White else Color.Transparent, RoundedCornerShape(50))
                                     .onFocusChanged { state -> 
                                         isGroupFocused = state.isFocused 
-                                        // 🔥 ফোকাস আসলেই সাউন্ড হবে
                                         if (state.isFocused && !wasFocused) {
                                             view.playSoundEffect(SoundEffectConstants.NAVIGATION_DOWN)
                                         }
@@ -1051,7 +1048,7 @@ fun CategoriesScreen(
                             if (isThumb) {
                                 ChannelThumbCard(
                                     channel = channel,
-                                    onPlay = { onPlay(displayCatChannels, index) },
+                                    onPlay = { onPlay(displayCatChannels, index, selectedCategory!!.m3uUrl) }, // 🔥 URL পাঠানো হচ্ছে
                                     isLastFocused = isLastFocusedChannel,
                                     focusRequester = focusRequester,
                                     onFocus = { onItemFocused(channel.url) }
@@ -1060,7 +1057,7 @@ fun CategoriesScreen(
                                 ChannelCircleCard( 
                                     channel = channel,
                                     isFavorite = favoriteUrls.contains(channel.url),
-                                    onPlay = { onPlay(displayCatChannels, index) },
+                                    onPlay = { onPlay(displayCatChannels, index, selectedCategory!!.m3uUrl) }, // 🔥 URL পাঠানো হচ্ছে
                                     onToggleFav = { onToggleFav(channel.url) },
                                     isLastFocused = isLastFocusedChannel,
                                     focusRequester = focusRequester,
@@ -1073,7 +1070,8 @@ fun CategoriesScreen(
             }
         }
     }
-}       
+}
+               
 @Composable
 fun CategoryCard(
     category: Category, 

@@ -323,13 +323,33 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
         }
     }
 
-    // 🔥 স্মার্ট অটো-প্লে লজিক: লাস্ট চ্যানেল প্লে হবে
+    // 🔥 আল্ট্রা-স্মার্ট অটো-প্লে লজিক: মেইন লিস্টে না থাকলেও টেম্পোরারি চ্যানেল বানিয়ে প্লে করবে
     LaunchedEffect(channels) {
         if (shouldAutoPlay && channels.isNotEmpty() && currentPlayingIndex == null) {
-            val lastIndex = prefs.getInt("last_played_channel_index", -1)
-            if (lastIndex != -1 && lastIndex < channels.size) {
-                currentPlayingList = channels
-                currentPlayingIndex = lastIndex
+            val lastUrl = prefs.getString("last_played_channel_url", "")
+            val lastName = prefs.getString("last_played_channel_name", "Saved Channel")
+            val lastLogo = prefs.getString("last_played_channel_logo", "")
+
+            if (!lastUrl.isNullOrEmpty()) {
+                val foundIndex = channels.indexOfFirst { it.url == lastUrl }
+                if (foundIndex != -1) {
+                    // চ্যানেলটি মেইন লিস্টে থাকলে সেখান থেকেই প্লে করবে
+                    currentPlayingList = channels
+                    currentPlayingIndex = foundIndex
+                } else {
+                    // 🔥 চ্যানেলটি মেইন লিস্টে নেই (হয়তো ক্যাটাগরি থেকে প্লে করা হয়েছিল)
+                    // তাই ভুল চ্যানেল প্লে না করে, ডিরেক্ট এই URL দিয়ে একটা সিঙ্গেল লিস্ট বানিয়ে প্লে করবে!
+                    val customChannel = Channel(name = lastName, group = "Saved", url = lastUrl, urls = mutableListOf(lastUrl), logo = lastLogo)
+                    currentPlayingList = listOf(customChannel)
+                    currentPlayingIndex = 0
+                }
+            } else {
+                // খুব পুরনো ভার্সনের ইউজারের জন্য ফলব্যাক
+                val lastIndex = prefs.getInt("last_played_channel_index", -1)
+                if (lastIndex != -1 && lastIndex < channels.size) {
+                    currentPlayingList = channels
+                    currentPlayingIndex = lastIndex
+                }
             }
         }
     }

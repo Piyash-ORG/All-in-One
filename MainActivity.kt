@@ -300,8 +300,8 @@ fun AppScreen(isTv: Boolean, shouldAutoPlay: Boolean = false) {
     var lastFocusedUrl by remember { mutableStateOf<String?>(null) }
     var focusRestoreTrigger by remember { mutableStateOf(false) }
 
-    val defaultM3uUrl = "https://cdn-direct-henna.vercel.app/index.m3u"
-    val streamRulesUrl = "https://raw.githubusercontent.com/piyashltd/all-in-one/main/rules.json"
+    val defaultM3uUrl = "https://nexa-play-iota.vercel.app/index.m3u"
+    val streamRulesUrl = "https://cdn.jsdelivr.net/gh/piyashltd/all-in-one@main/rules.json"
 
     val adManager = remember { AdManager(context) }
     var adConfig by remember { mutableStateOf(AdConfig()) }

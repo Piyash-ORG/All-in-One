@@ -615,7 +615,43 @@ fun ExoPlayerView(
                         .clickable(enabled = false) {} 
                 ) {
                     Text("Subtitle Settings", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
-                    Spacer(modifier = Modifier.height(24.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // 🔥 সরাসরি ডায়ালগ থেকে Subtitle অন/অফ করার সুইচ
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("Enable Subtitles", color = Color.White, fontSize = 16.sp)
+                        var isSwitchFocused by remember { mutableStateOf(false) }
+                        Switch(
+                            checked = isSubtitleEnabled,
+                            onCheckedChange = { isEnabled ->
+                                isSubtitleEnabled = isEnabled
+                                prefs.edit().putBoolean("saved_subtitle_enabled", isSubtitleEnabled).apply()
+                                
+                                val paramsBuilder = trackSelector.buildUponParameters()
+                                if (!isSubtitleEnabled) {
+                                    paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
+                                } else {
+                                    paramsBuilder.setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+                                    paramsBuilder.setPreferredTextLanguage("bn")
+                                }
+                                trackSelector.parameters = paramsBuilder.build()
+                            },
+                            modifier = Modifier
+                                .focusRequester(subtitleFocusRequester)
+                                .onFocusChanged { isSwitchFocused = it.isFocused }
+                                .border(if (isSwitchFocused) 2.dp else 0.dp, if (isSwitchFocused) Color.White else Color.Transparent, CircleShape),
+                            colors = SwitchDefaults.colors(
+                                checkedThumbColor = Color.Black, 
+                                checkedTrackColor = Color.Yellow,
+                                uncheckedThumbColor = Color.Gray,
+                                uncheckedTrackColor = Color.DarkGray
+                            )
+                        )
+                    }
                     
                     Text("Subtitle Size: ${(subtitleSize * 1000).toInt()}", color = Color.Yellow)
                     Row(horizontalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.padding(vertical = 8.dp)) {
@@ -625,8 +661,8 @@ fun ExoPlayerView(
                                 subtitleSize = (subtitleSize + 0.005f).coerceAtMost(0.2f)
                                 prefs.edit().putFloat("saved_sub_size", subtitleSize).apply() 
                             },
+                            enabled = isSubtitleEnabled, // 🔥 অফ থাকলে বাটন কাজ করবে না
                             modifier = Modifier
-                                .focusRequester(subtitleFocusRequester) // 🔥 ডায়ালগ খুললেই এখানে ফোকাস আসবে
                                 .onFocusChanged { isLargerFocused = it.isFocused }
                                 .border(if (isLargerFocused) 2.dp else 0.dp, if (isLargerFocused) Color.White else Color.Transparent, RoundedCornerShape(50)),
                             colors = ButtonDefaults.buttonColors(containerColor = if (isLargerFocused) Color.Yellow else Color.DarkGray)
@@ -638,6 +674,7 @@ fun ExoPlayerView(
                                 subtitleSize = (subtitleSize - 0.005f).coerceAtLeast(0.01f)
                                 prefs.edit().putFloat("saved_sub_size", subtitleSize).apply() 
                             },
+                            enabled = isSubtitleEnabled, // 🔥 অফ থাকলে বাটন কাজ করবে না
                             modifier = Modifier
                                 .onFocusChanged { isSmallerFocused = it.isFocused }
                                 .border(if (isSmallerFocused) 2.dp else 0.dp, if (isSmallerFocused) Color.White else Color.Transparent, RoundedCornerShape(50)),
@@ -652,9 +689,10 @@ fun ExoPlayerView(
                         var isUpFocused by remember { mutableStateOf(false) }
                         Button(
                             onClick = { 
-                                subtitleOffset = (subtitleOffset + 20f).coerceAtMost(800f) // 🔥 প্রতি ক্লিকে ২০ পিক্সেল করে উপরে উঠবে
+                                subtitleOffset = (subtitleOffset + 20f).coerceAtMost(800f) 
                                 prefs.edit().putFloat("saved_sub_offset_y", subtitleOffset).apply() 
                             },
+                            enabled = isSubtitleEnabled,
                             modifier = Modifier
                                 .onFocusChanged { isUpFocused = it.isFocused }
                                 .border(if (isUpFocused) 2.dp else 0.dp, if (isUpFocused) Color.White else Color.Transparent, RoundedCornerShape(50)),
@@ -667,6 +705,7 @@ fun ExoPlayerView(
                                 subtitleOffset = (subtitleOffset - 20f).coerceAtLeast(0f)
                                 prefs.edit().putFloat("saved_sub_offset_y", subtitleOffset).apply() 
                             },
+                            enabled = isSubtitleEnabled,
                             modifier = Modifier
                                 .onFocusChanged { isDownFocused = it.isFocused }
                                 .border(if (isDownFocused) 2.dp else 0.dp, if (isDownFocused) Color.White else Color.Transparent, RoundedCornerShape(50)),
@@ -677,7 +716,6 @@ fun ExoPlayerView(
             }
         }
     }
-
     if (showQualityDialog) {
         Dialog(
             onDismissRequest = { showQualityDialog = false },

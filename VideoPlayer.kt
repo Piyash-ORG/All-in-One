@@ -299,8 +299,9 @@ fun ExoPlayerView(
             }
         }.setExtensionRendererMode(androidx.media3.exoplayer.DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON) // 🔥 PREFER এর বদলে ON দেওয়া হলো
         
+        // 🔥 লাইভ টিভি ও ডিরেক্ট মিডিয়ার জন্য বাফার সাইজ কমানো হলো (দ্রুত প্লে হবে)
         val loadControl = DefaultLoadControl.Builder()
-            .setBufferDurationsMs(32000, 64000, 2000, 5000)
+            .setBufferDurationsMs(15000, 50000, 1000, 2000)
             .build()
 
         ExoPlayer.Builder(context, renderersFactory)

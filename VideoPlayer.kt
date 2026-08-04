@@ -428,10 +428,10 @@ fun ExoPlayerView(
         }
     }
 
-    // 🔥 বাফারিং টাইমআউটের জন্য নতুন জব
-    var bufferingJob by remember { mutableStateOf<Job?>(null) }
-
+        // 🔥 State থেকে জব সরিয়ে সরাসরি লোকাল ভেরিয়েবলে আনা হলো (টাইমার লিকেজ বন্ধ করতে)
     DisposableEffect(exoPlayer) {
+        var bufferingJob: Job? = null 
+
         val listener = object : Player.Listener {
             
             override fun onIsPlayingChanged(isPlayingState: Boolean) {
@@ -442,20 +442,21 @@ fun ExoPlayerView(
                 playbackState = state
                 
                 if (state == Player.STATE_READY) {
-                    // প্লে শুরু হলে বাফারিং জব বাতিল করে দিন
+                    // 🔥 ভিডিও প্লে শুরু হলেই সাথে সাথে আগের যেকোনো জব পুরোপুরি ক্যানসেল ও ক্লিয়ার করবে
                     bufferingJob?.cancel()
+                    bufferingJob = null
                     
                     val realDuration = exoPlayer.duration
                     duration = if (realDuration > 0 && realDuration != C.TIME_UNSET) realDuration else 0L
                 }
 
                 if (state == Player.STATE_BUFFERING) {
-                    // বাফারিং শুরু হলেই 10 সেকেন্ডের টাইমার চালু হবে
+                    // বাফারিং শুরু হলে নতুন জব তৈরি করবে
                     bufferingJob?.cancel()
                     bufferingJob = coroutineScope.launch {
-                        delay(20000L) // 10 সেকেন্ড অপেক্ষা
-                        if (isActive && playbackState == Player.STATE_BUFFERING) {
-                            // 10 সেকেন্ড পার হয়ে গেছে, এখনো বাফারিং! এবার নেক্সট চ্যানেলে যাও
+                        delay(20000L) // 20 সেকেন্ড অপেক্ষা
+                        // 🔥 এখানে সরাসরি exoPlayer.playbackState চেক করা হয়েছে (Compose State এর উপর নির্ভর না করে)
+                        if (isActive && exoPlayer.playbackState == Player.STATE_BUFFERING) {
                             showToast("Channel timeout! Skipping to next channel...")
                             currentServerIndex = 0 
                             currentIndex = if (currentIndex < playlist.size - 1) currentIndex + 1 else 0
@@ -470,6 +471,13 @@ fun ExoPlayerView(
             }
                        
             override fun onPlayerError(error: PlaybackException) {
+                // 🔥 লাইভ টিভির সবচেয়ে বড় সমস্যা "Behind Live Window" এরর ফিক্স করা হলো
+                if (error.errorCode == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
+                    exoPlayer.seekToDefaultPosition()
+                    exoPlayer.prepare()
+                    return // চ্যানেল স্কিপ করবে না, আবার ট্রাই করবে
+                }
+
                 super.onPlayerError(error)
                 val currentChannel = playlist[currentIndex]
                 
@@ -526,12 +534,14 @@ fun ExoPlayerView(
         }
         exoPlayer.addListener(listener)
         onDispose { 
-            bufferingJob?.cancel() // মেমরি লিক এড়াতে
+            bufferingJob?.cancel()
+            bufferingJob = null
             exoPlayer.removeListener(listener)
             exoPlayer.release() 
         }
     }
 
+    
      LaunchedEffect(isPlaying, isControllerVisible) {
         while (isPlaying && isControllerVisible) {
             currentPosition = exoPlayer.currentPosition

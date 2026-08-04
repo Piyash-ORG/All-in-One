@@ -563,9 +563,12 @@ fun ExoPlayerView(
         
         val config = getConfigForUrl(url, streamRules)
 
+        // 🔥 লাইভ স্ট্রিম ও স্লো সার্ভারের জন্য নেটওয়ার্ক টাইমআউট বাড়ানো হলো (15s Connect, 20s Read)
         val dataSourceFactory = DefaultHttpDataSource.Factory()
             .setUserAgent(config.userAgent)
             .setAllowCrossProtocolRedirects(true)
+            .setConnectTimeoutMs(15000) 
+            .setReadTimeoutMs(20000)
             
         if (config.headers.isNotEmpty()) {
             dataSourceFactory.setDefaultRequestProperties(config.headers)

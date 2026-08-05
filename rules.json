@@ -12,6 +12,18 @@
       "drm_key": "d271bd6480344bf5938574325cbbfcd7:88b68ebb9588d70ecef11f28c5099205"
     },
     {
+      "domain": "api.hridoytvheart.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://hridoytv.pages.dev",
+        "Referer": "https://hridoytv.pages.dev/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
       "domain": "kamrul-mc-ar-baki-bc-toder-baper-stream-monekore-user-kor.nurmd2006-official.workers.dev",
       "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
       "headers": {

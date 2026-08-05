@@ -1,6 +1,54 @@
 {
   "rules": [
     {
+      "domain": "play.hridoytvtunel.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://hridoytv.pages.dev",
+        "Referer": "https://hridoytv.pages.dev/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
+      "domain": "proxy5.hridoytv-link.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://hridoytv.pages.dev",
+        "Referer": "https://hridoytv.pages.dev/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
+      "domain": "pro.hridoytv-pro.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://hridoytv.pages.dev",
+        "Referer": "https://hridoytv.pages.dev/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
+      "domain": "api.hridoytvheart.workers.dev",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+      "headers": {
+        "Origin": "https://hridoytv.pages.dev",
+        "Referer": "https://hridoytv.pages.dev/"
+      },
+      "is_drm": false,
+      "drm_type": "",
+      "drm_license_url": "",
+      "drm_key": ""
+    },
+    {
       "domain": "pro.hridoytv-pro.workers.dev",
       "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36",
       "headers": {

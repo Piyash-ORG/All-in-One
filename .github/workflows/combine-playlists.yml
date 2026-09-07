@@ -204,25 +204,6 @@ jobs:
                   fi
                 fi
               done
-
-              # --- Special Post-Processing: Adding sequential numbers to songs/index.m3u ---
-              if [[ "$folder" == "songs" ]]; then
-                echo "🔢 Adding sequential numbering to songs/index.m3u..."
-                awk '
-                BEGIN { count = 1 }
-                /^#EXTINF/ {
-                    match($0, /,[^,]*$/)
-                    if (RSTART > 0) {
-                        before = substr($0, 1, RSTART)
-                        after = substr($0, RSTART + 1)
-                        $0 = before sprintf("%02d. ", count++) after
-                    }
-                }
-                { print }
-                ' "$folder/index.m3u" > temp_songs.m3u && mv temp_songs.m3u "$folder/index.m3u"
-              fi
-              # --- End Special Post-Processing ---
-
             else
               echo "Directory $folder not found. Skipping..."
             fi
@@ -233,6 +214,6 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-update: Original song order preserved with sequential numbering"
+          commit_message: "Auto-update: Combined and Sorted M3U Playlists (Original song order preserved)"
           file_pattern: 'index.m3u */index.m3u */*.m3u'
           commit_options: '--no-verify'
